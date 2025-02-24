@@ -1,0 +1,1290 @@
+/* The name that have been used：cover，kongzi */
+
+/* The style of little box */
+.box{
+  /* flex: 1; */
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border: solid;
+  border-radius: 0px 0px 0px 0px;
+  overflow: auto;
+}
+
+/* the picture of little box */
+.boxpic{
+  /* flex: 1; */
+  height: 380px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: solid;
+  border-radius: 0px 0px 0px 0px;
+  overflow: auto;
+}
+
+/* the picture on the phone */
+@media (max-width: 400px) {
+  .boxpic{
+    margin-top: 50px;
+    height: 250px;
+    object-fit: fill;
+  }
+  .phonepic{
+    height: 190px;
+    width: 150px;
+  }
+}
+
+/* the style of the big box */
+.bigbox{
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* the box for the animation of introducing the 4 books */
+.anibox1{
+  background-color: rgb(255, 255, 255);
+}
+
+.anibox1:hover{
+  animation: intro 0.5s linear 1 normal forwards;
+}
+
+/* The animation for introduce the 4 books */
+@keyframes intro{
+  from{
+    transform: scale(100%);
+  }
+  to{
+    transform: scale(120%);
+  }
+}
+
+/* buy button */
+.buy{
+  text-align: center;
+  border-radius: 15%;
+  width: 50%;
+  margin-left: 25%;
+  background-color: #edff64;
+}
+
+.buy:hover{
+  animation: buy 0.5s linear 1 normal forwards;
+}
+
+/* the animation of buy button */
+@keyframes buy {
+  from{
+    transform: scale(100%);
+    background-color: #e8f39a;
+  }
+  to{
+    transform: scale(120%);
+    background-color: #e1ff02;
+  }
+}
+
+
+/* single box */
+.webbox{
+  margin-top: 150px; 
+  display: flex;
+  width: 45%;
+}
+
+/* only one column on the phone */
+@media (max-width: 400px) {
+  .webbox{
+    width: 100%;
+  }
+}
+
+/* on the center */
+.center{
+  text-align: center;
+}
+
+/* Centering prevents content from overflowing */
+.center1{
+  text-align: center;
+  overflow : auto;
+}
+
+/* Set the text effect */
+.content{
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 21px;
+  overflow: auto;
+}
+
+/* The background of the whole page */
+.backbox{
+/* body{ */
+  background-image: url("../picture/0.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Change the bc-img on the phone */
+@media (max-width: 400px) {
+  .background{
+    background-image: url("../picture/tianyin.webp");
+    background-size: cover;
+    background-position: center;
+    /* background-size: 400px; */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+/* the layout on the web */
+.web{
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 4fr;
+  
+}
+
+ 
+/* float on the left */
+.float{
+  float:left;
+}
+
+/* float on the right */
+.float1{
+  float:right;
+}
+
+.head{
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  /* padding-bottom: 20px; */
+  display: flex;
+  border: solid;
+  width: 100%;
+  /* border-radius: 10%; */
+  /* box-shadow: 15px 15px rgb(195, 195, 195); */
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.logo{
+  width: 300px;
+  height: 50px;
+  /*hide the words*/
+  /* background-color: gray; */
+  margin-top: 10px;
+  margin-right: 50px;
+  object-fit: contain;
+  /* border-radius: 50%; */
+  /* fill */
+}
+
+/* add a picture to logo */
+.logo a{
+  display: block;
+  width: 300px;
+  height: 50px;
+  /* background-image:url("picture/kongzi.jpg"); */
+}
+
+.header1{
+  display: block;
+}
+
+.nav{
+  margin-top: 10px;
+  margin-right: 30px;
+  width: 100%;
+  display: block;
+}
+
+.nav ul{
+  display: flex;
+}
+
+.nav li{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content:space-evenly;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+  /* flex: 1; */
+  border: solid;
+  border-radius: 20px;
+}
+
+/* show the nav on the phone */
+.header2{
+  display: none;
+}
+
+.headernav{
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  display: none;
+}
+
+.headernav li{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .nav li{
+    padding: 0px;
+    border-radius: 0px;
+  }
+  .header1{
+    display: none; /* hide the nav for the desktop */
+  }
+  .header2{
+    display: block; /* show the nav for the phone*/
+  }
+}
+
+/* Blank, for get a position */
+.useless{
+  height: 100px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+/* Back to the top */
+.totop{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* To top picture */
+.totopimg{
+  object-fit: contain;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  animation: kongzi 1s linear infinite;
+}
+
+/* Footer */
+.footer{
+  width: 100%;
+  background-color: #e4e4e4;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footerpic{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 200px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* to top animation */
+@keyframes kongzi{
+  0%{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+
+/* Navigation bar button animation effect */
+.headani:hover{
+  background-color: #fff;
+  animation: headani 0.5s linear 1 normal forwards;
+}
+
+@keyframes headani{
+  from{
+    transform: scale(115%);
+    background-color: #ffffff;
+  }
+  to{
+    transform: scale(115%);
+    background-color: #d6e997;
+  }
+}
+
+/* effect of the changing pictures */
+.cover-wrapper{
+  /* height: 480px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%; */
+  height: 480px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateZ(-300px) rotateY(0);
+  /* animation */
+  animation: rowing 8s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+
+.coverbox{
+  height: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform-origin: center;
+}
+
+
+/* Animation */
+.coverpic{
+  /* object-fit: contain;
+  height: 400px;
+  width: 850px;
+  margin-top: 70px;
+  animation: coverpic 0.5s linear(0,0.25,1) 1 normal; */
+  object-fit: contain;
+  height: 350px;
+  width: 600px;
+  margin-top: 70px;
+  animation: coverpic 0.5s linear(0,0.25,1) 1 normal;
+  position: absolute;
+  /* border */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  /* shadow */
+  -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 50%, rgba(255,255,255,0.3));
+}
+
+
+/* Change the size of the animation on the phone */
+@media (max-width: 400px) {
+  .coverpic{
+    object-fit: contain;
+    width: 300px;
+    height: 200px;
+  }
+  .coverbox{
+    height: 300px;
+  }
+  .cover-wrapper{
+    height: 300px;
+  }
+}
+
+/* the effect on the both 2 sides */
+.coverpic:nth-child(1) {
+  transform: rotateY(0) translateZ(300px);
+}
+.coverpic:nth-child(2) {
+  transform: rotateY(90deg) translateZ(300px);
+}
+.coverpic:nth-child(3) {
+  transform: rotateY(180deg) translateZ(300px);
+}
+.coverpic:nth-child(4) {
+  transform: rotateY(270deg) translateZ(300px);
+}
+
+/* The angle of the rotating animation */
+@keyframes rowing{
+  0%,
+  12% {
+    transform: translateZ(-200px) rotateY(0);
+  }
+  23%,
+  34% {
+    transform: translateZ(-200px) rotateY(-90deg);
+  }
+  45%,
+  56% {
+    transform: translateZ(-200px) rotateY(-180deg);
+  }
+  67%,
+  78% {
+    transform: translateZ(-200px) rotateY(-270deg);
+  }
+  89%,
+  100% {
+    transform: translateZ(-200px) rotateY(-360deg);
+  }
+}
+
+/* The detailed layout of JTTW */
+.introxiyoubox {  
+  width: 100%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 7fr;
+}
+
+/* shopping trolley */
+
+.gotopay{
+  width: 20%;
+  text-align: center;
+  height: 50px;
+  background-color: #ff0000;
+  margin-left: 40%;
+  margin-right: 40%;
+  border: solid;
+  border-radius: 10%;
+}
+
+/* when click,add the animation */
+.gotopay:hover{
+  animation: gotopay 0.5s linear 1 normal forwards;
+}
+
+@keyframes gotopay{
+  from{
+    transform: scale(115%);
+    background-color: #ffffff;
+  }
+  to{
+    transform: scale(115%);
+    background-color: #d6e997;
+  }
+}
+
+/* The position of 3 picture for click*/
+.introxiyoupic1{
+  padding-top: 80%;
+  text-align: center;
+  margin-top: 60%;
+}
+
+.introxiyoupic2{
+  padding-bottom: 80%;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.introxiyoupic3{
+  padding-top: 80%;
+  text-align: center;
+  margin-top: 60%;
+}
+
+
+/* show the 3 pictures on the phone */
+@media (max-width:400px) {
+  .introxiyoupic3{
+    margin-top: 30%;
+  }
+}
+
+/* the 3 picture themselves */
+.introxiyoupic01{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+.introxiyoupic02{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+.introxiyoupic03{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+/* The position of the 3 pictures on the phone */
+@media (max-width: 400px) {
+  .introxiyoupic01{
+    width: 40px;
+  }
+  .introxiyoupic02{
+    width: 40px;
+  }
+  .introxiyoupic03{
+    width: 40px;
+  }
+}
+
+/* The title under the pictures */
+.introtitle{
+  text-align: center;
+  border-radius: 20%;
+  background-color: #e0e0e0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* The profoile on the right of the picture */
+.introcontent1{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 5%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback1 5s ease-in-out infinite;
+  display: block;
+  height: 200px;
+  overflow: auto;
+}
+
+.introcontent2{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 5%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback2 5s ease-in-out infinite;
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+
+.introcontent3{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 3%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback3 5s ease-in-out infinite;
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+
+.introback{
+  background-color: #ffffff00;
+  /* animation: introback1 5s ease-in-out infinite; */
+}
+
+@keyframes introback1 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #fd3e3e;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+@keyframes introback2 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #2ccda5;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+@keyframes introback3 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #fec804;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+/* The detailed layout of ADORM */
+.introhongloubox {  
+  width: 100%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr 1fr;
+}
+
+/* The position of 3 picture for click*/
+.introhongloupic1{
+  padding-top: 80%;
+  text-align: center;
+  margin-top: 60%;
+}
+
+.introhongloupic2{
+  padding-bottom: 80%;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.introhongloupic3{
+  padding-top: 80%;
+  text-align: center;
+  margin-top: 60%;
+}
+
+/* show the 3 pictures on the phone */
+@media (max-width:400px) {
+  .introhongloupic3{
+    margin-top: 30%;
+  }
+}
+
+/* the 3 picture themselves */
+.introhongloupic01{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+.introhongloupic02{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+.introhongloupic03{
+  border-radius: 10%;
+  object-fit: contain;
+  width: 100px;
+}
+
+/* The position of the 3 pictures on the phone */
+@media (max-width: 400px) {
+  .introhongloupic01{
+    width: 40px;
+  }
+  .introhongloupic02{
+    width: 40px;
+  }
+  .introhongloupic03{
+    width: 40px;
+  }
+}
+
+/* The title under the pictures */
+.introtitle{
+  text-align: center;
+  border-radius: 20%;
+  background-color: #e0e0e0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* The profoile on the right of the picture */
+.introcontent4{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 5%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback4 5s ease-in-out infinite;
+  display: block;
+  height: 200px;
+  overflow: auto;
+}
+
+.introcontent5{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 5%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback5 5s ease-in-out infinite;
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+
+.introcontent6{
+  border: solid;
+  padding-left: 30px; 
+  padding-top: 3%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  animation: introback6 5s ease-in-out infinite;
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+
+.introback{
+  background-color: #ffffff00;
+  /* animation: introback1 5s ease-in-out infinite; */
+}
+
+@keyframes introback4 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #fd3e3e;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+@keyframes introback5 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #2ccda5;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+@keyframes introback6 {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color:  #fec804;
+  }
+  100%{
+    background-color: #fff;
+  }
+}
+
+/* The detailed layout of SHUIHU */
+.introshuihubox {  
+	width: 100%;
+	height: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 7fr;
+  }
+  
+  /* The position of 3 picture for click*/
+  .introshuihupic1{
+	padding-top: 80%;
+	text-align: center;
+	margin-top: 60%;
+  }
+  
+  .introshuihupic2{
+	padding-bottom: 80%;
+	text-align: center;
+	margin-top: 20%;
+  }
+  
+  .introshuihupic3{
+    padding-top: 80%;
+    text-align: center;
+    margin-top: 60%;
+    }
+
+  /* show the 3 pictures on the phone */
+  @media (max-width:400px) {
+    .introshuihupic3{
+      margin-top: 30%;
+    }
+  }
+
+  /* the 3 picture themselves */
+  .introshuihupic01{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  .introshuihupic02{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  .introshuihupic03{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  /* The position of the 3 pictures on the phone */
+@media (max-width: 400px) {
+  .introshuihupic01{
+    width: 40px;
+  }
+  .introshuihupic02{
+    width: 40px;
+  }
+  .introshuihupic03{
+    width: 40px;
+  }
+}
+
+
+  /* The title under the pictures */
+  .introtitle{
+	text-align: center;
+	border-radius: 20%;
+	background-color: #e0e0e0;
+	margin-left: 10%;
+	margin-right: 10%;
+  }
+  
+  /* The profoile on the right of the picture */
+  .introcontent7{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 5%;
+	margin-top: 1%;
+	margin-bottom: 10%;
+	animation: introback7 5s ease-in-out infinite;
+	display: block;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introcontent8{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 5%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	animation: introback8 5s ease-in-out infinite;
+	display: none;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introcontent9{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 3%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	animation: introback9 5s ease-in-out infinite;
+	display: none;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introback{
+	background-color: #ffffff00;
+	/* animation: introback1 5s ease-in-out infinite; */
+  }
+  
+  @keyframes introback7 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #fd3e3e;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+  
+  @keyframes introback8 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #2ccda5;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+  
+  @keyframes introback9 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #fec804;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+
+  /* The detailed layout of Sanguo */
+.introsanguobox {  
+	width: 100%;
+	height: 400px;
+	display: grid;
+	grid-template-columns: 7fr 1fr 1fr 1fr;
+  }
+  
+  /* The position of 3 picture for click*/
+  .introsanguopic1{
+	padding-top: 80%;
+	text-align: center;
+	margin-top: 60%;
+  }
+  
+  .introsanguopic2{
+	padding-bottom: 80%;
+	text-align: center;
+	margin-top: 20%;
+  }
+  
+  .introsanguopic3{
+    padding-top: 80%;
+    text-align: center;
+    margin-top: 60%;
+    }
+
+  /* show the 3 pictures on the phone */
+  @media (max-width:400px) {
+    .introsanguopic3{
+      margin-top: 30%;
+    }
+  }
+
+ /* The position of 3 pic */
+
+  /* the 3 picture themselves */
+  .introsanguopic01{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  .introsanguopic02{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  .introsanguopic03{
+	border-radius: 10%;
+	object-fit: contain;
+	width: 100px;
+  }
+  
+  /* The position of the 3 pictures on the phone */
+  @media (max-width: 400px) {
+    .introsanguopic01{
+      width: 40px;
+    }
+    .introsanguopic02{
+      width: 40px;
+    }
+    .introsanguopic03{
+      width: 40px;
+    }
+  }
+
+  /* The title under the pictures */
+  .introtitle{
+	text-align: center;
+	border-radius: 20%;
+	background-color: #e0e0e0;
+	margin-left: 10%;
+	margin-right: 10%;
+  }
+  
+  /* The profoile on the right of the picture */
+  .introcontent10{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 5%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	animation: introback10 5s ease-in-out infinite;
+	display: block;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introcontent11{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 5%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	animation: introback11 5s ease-in-out infinite;
+	display: none;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introcontent12{
+	border: solid;
+	padding-left: 30px; 
+	padding-top: 3%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	animation: introback12 5s ease-in-out infinite;
+	display: none;
+  height: 200px;
+  overflow: auto;
+  }
+  
+  .introback{
+	background-color: #ffffff00;
+	/* animation: introback1 5s ease-in-out infinite; */
+  }
+  
+  @keyframes introback10 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #fd3e3e;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+  
+  @keyframes introback11 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #2ccda5;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+  
+  @keyframes introback12 {
+	0%{
+	  background-color: #fff;
+	}
+	50%{
+	  background-color:  #fec804;
+	}
+	100%{
+	  background-color: #fff;
+	}
+  }
+
+
+
+/* successpage */
+
+.suctext{
+	text-align: left;
+	margin-top: 10%;
+}
+
+
+/* trolleypage */
+
+.trotitle{
+	width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #fd7676;
+	color: rgb(108, 255, 108);
+	font-size: 30px;
+	text-align: center;
+	height: 50px;
+  font-weight: bolder;
+  border: solid;
+}
+
+.tro {
+	display: flex block;
+	grid-template-columns: 2fr 5fr 2fr 1fr;
+	background-color: #fff;
+	width: 100%;
+	height: 200px;
+	border: solid;
+	align-items: center;
+	img {
+		height: -webkit-fill-available;
+	}
+	.title {
+		flex: 1;
+		text-align: center;
+	}
+}
+
+.tro1{
+	background-color: #fff;
+}
+
+.tro2{
+	background-color: #fff;
+}
+
+.tro3{
+	background-color: #fff;
+}
+
+.tro4{
+	background-color: #fff;
+}
+
+.tropic{
+	object-fit: contain;
+	/* width: 50%; */
+}
+
+.tro5{
+	display: none;
+}
+
+
+/* wordpage */
+
+/* words */
+.word{
+	width: 100%;
+	text-align: center;
+	height: 100px;
+	margin-top: 150px;
+  }
+
+  /* white words */
+.baizi{
+	color: rgb(153, 152, 208);
+	font-weight: bold;
+  }
+
+.paywaypic{
+	text-align:center;
+	width: 60%;
+	height: 50px;
+	margin-top: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
+	box-sizing: border-box;
+}
+  
+.paypic1{
+	width: 15%;
+	height: 50px;
+	object-fit: contain;
+	border: solid;
+	box-sizing: border-box;
+	border-bottom: 0px;
+	background-color: #fff;
+	border-bottom: rgb(255, 255, 255);
+}
+
+.paypic2{
+	width: 15%;
+	height: 50px;
+	object-fit: contain;
+	border: solid;
+	box-sizing: border-box;
+	border-bottom: 0px;
+	background-color: #fff;
+	border-bottom: black;
+}
+
+.paypic3{
+	width: 15%;
+	height: 50px;
+	object-fit: contain;
+	border: solid;
+	box-sizing: border-box;
+	border-bottom: 0px;
+	background-color: #fff;
+	border-bottom: black;
+}
+
+/* the box for payment */
+.paybox01{
+	height: 300px;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;	
+	border: solid;
+	display: block;
+	background-color: #fff;
+}
+
+/* for wx */
+.paybox02{
+	height: 500px;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;	
+	border: solid;
+	display: none;
+	text-align: center;
+	background-color: #fff;
+}
+
+/* for alipay */
+.paybox03{
+	height: 500px;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;	
+	border: solid;
+	display: none;
+	text-align: center;
+	background-color: #fff;
+}
+
+.sub{
+	height:40px ;
+	background-color: red;
+	padding-left: 20%;
+	margin-right: 60%;
+	border: solid;
+	border-radius:10% ;
+	width: 40%;
+}
+
+.textbox{
+	border-bottom: 3px solid #000000;
+	width: 60%;
+	margin-right: 20%;	
+}
+
+input{
+	border:none;
+	width: 100%;
+
+}
+
+/* press continue */
+.sub:hover{
+	animation: sub 0.2s linear 1 normal forwards;
+  }
+  
+  @keyframes sub{
+	from{
+	  transform: scale(115%);
+	  background-color: red;
+	}
+	to{
+	  transform: scale(115%);
+	  background-color: #e76464;
+	}
+  }
