@@ -1,21 +1,49 @@
-image: python:3.6
+name: Deploy Static Wiki to GitHub Pages
 
-build:
-  stage: build
-  script:
-    - pip install --no-cache-dir -r dependencies.txt
-    - FLASK_APP=app.py flask freeze
-  rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+on:
+  push:
+    branches: ["main"]  # 监听 main 分支推送
+  workflow_dispatch:    # 允许手动触发
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-pages:
-  stage: build
-  script:
-    - pip install --no-cache-dir -r dependencies.txt
-    - FLASK_APP=app.py flask freeze
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 拉取代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ 设置 Python 环境
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.6'  # 保持原有的 Python 版本
+
+      # 3️⃣ 安装依赖
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r dependencies.txt
+
+      # 4️⃣ 生成静态文件
+      - name: Generate static site
+        run: FLASK_APP=app.py flask freeze
+
+      # 5️⃣ 配置 GitHub Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # 6️⃣ 上传静态网站文件
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      # 7️⃣ 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
