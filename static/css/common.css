@@ -1,0 +1,104 @@
+@font-face {
+  font-family: NunitoBlod;
+  src: url('https://static.igem.wiki/teams/5044/nunito-bold.woff');
+}
+
+@font-face {
+  font-family: NunitoRegular;
+  src: url('https://static.igem.wiki/teams/5044/nunito-regular.woff');
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+* {
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF9E9;
+  font-family: NunitoBlod, Arial, sans-serif;
+}
+
+.wiki-editor-container {
+  flex: 1;
+  background: #fefdf8;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 0 #72936e;
+  max-width: 50rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  border: 1px solid #ffeedb;
+  font-family: NunitoRegular, sans-serif;
+  align-self: start;
+}
+
+.wiki-editor-container-no-auth {
+  flex: 1;
+  background: #fefdf8;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 0 #72936e;
+  max-width: 50rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  border: 1px solid #ffeedb;
+  font-family: NunitoRegular, sans-serif;
+  align-self: start;
+}
+
+.swiper-pagination-bullet-active {
+  background: #608862 !important;
+}
+
+.table-box {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #76936d;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fef9e9;
+  }
+
+  table {
+    min-width: 72rem;
+  }
+}

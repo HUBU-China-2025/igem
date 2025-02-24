@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% block title %}Design{% endblock %}
+
+{% block page_content %}
+  <section class="header-box"></section>
+  <div class="px-2 px-lg-5 d-flex flex-row">
+    <div class="d-none d-lg-block" style="min-width: 280px; position: relative">
+      <div id="anchors">
+        <div class="title">Contents</div>
+        <ul id="anchors-list"></ul>
+      </div>
+    </div>
+    <section class="py-5 container wiki-editor-container-no-auth">
+      <h2>
+        <span style="color: rgb(89, 191, 192);"><strong>Overview</strong></span>
+      </h2>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;The plastid-mediated RNAi tobacco <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> constructed can be divided into four parts:
+        Engineered bacteria construction, Insect feeding and bioassays, and Plastid transformation, Insect feeding and
+        bioassays. The biosafety module will be introduced into the engineering safety form plastid-free pollen.</p>
+      <h2><span style="color: rgb(89, 191, 192);"><strong>Engineered Bacteria Construction</strong></span></h2>
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Selection of Backbones</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Five backbones were selected in the literature: At-miR159(<em>At, Arabidopsis
+        thaliana</em>), Dm-ba (<em>Dm, Drosophila melanogaster</em>), Dv-miR279 (<em>Dv, Diabrotica virgifera</em>),
+        Dv-miR1 and Tc-ba (<em>Tc, Tribolium castaneum</em>). The literature shows that the effect of the insect
+        backbones is better than that of the plant backbones. The results of the five backbones compared with the wild
+        type are as follows:</p>
+      <p style="text-align: center;"><img src="https://static.igem.wiki/teams/5044/design-1.png" alt="design-1.png" data-href="" style="width: 100%;"></p>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;By comparing the rate of death and pupation failure：greatest inhibition Tc-ba &gt;
+        Dv-miR279 &gt; Dv-miR1 &gt; Dm-ba &gt; At-miR159, so <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> finally chose the Tc-ba backbone.</p>
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Screening of Lethal RNAi Target Genes</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Chitin is one the main components of the insect cuticle, and chitin synthase (CHS)
+        is an important enzyme required for chitin formation.</p>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Previous experimental results suggest that <em>SlCHS1 </em>might play an important
+        role during <em>S. litura </em>larval molting, while <em>SlCHS2 </em>has no significant effect on<em> S.
+          litura </em>molting. Therefore, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> have chosen <em>SlCHS1 </em>for further study.</p>
+      <p style="text-align: center;"><img src="https://static.igem.wiki/teams/5044/design-2.png" alt="design-2.png" data-href="" style="width: 100%;"></p>
+      
+      <h3 style="text-align: left;"><span style="color: rgb(114, 192, 64);"><strong>Target Fragment Construction</strong></span></h3>
+      <p style="text-align: left;"> &nbsp; &nbsp; &nbsp; &nbsp;A vector for amiCHS1 with Tc-ba as the backbone and <em>SlCHS1</em>
+        as the target gene was designed.<img src="https://static.igem.wiki/teams/5044/design-3.jpg" alt="" data-href="" style="width: 100%;"></p>
+      
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Vector Construction</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Due to the long growth cycle of tobacco and the short growth cycle of E. coli, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>
+        planned to test the effectiveness of the experiment with E. coli first, and designed 3 different types of
+        engineered bacteria.</p>
+      <p><strong>Engineering Bacteria I (T7: Tc-ba-miR-CHS1):</strong> To detect whether amiRNA-CHS1 affects the
+        expression level of <em>SlCHS1</em> gene.</p>
+      <p><strong>Engineering Bacteria II (T7: 2xCP): </strong>To detect whether MS2-VLP affects the expression level of
+        <em>SlCHS1</em> gene.</p>
+      <p><strong>Engineering Bacteria III (Tc-ba-miR-CHS1 &amp; T7：2xCP): </strong>To detect whether amiRNA-CHS1
+        encapsulated with MS2-VLPs protein affects the expression level of <em>SlCHS1</em> gene.</p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-warning" src="https://static.igem.wiki/teams/5044/design-4-1-1.png" alt="" data-href="" style="width: 45%;">
+        <img class="rounded-4 border border-2 border-danger" src="https://static.igem.wiki/teams/5044/design-5-1-1.png" alt="" data-href="" style="width: 45%;"></p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-primary" src="https://static.igem.wiki/teams/5044/design-6-1-1.png" alt="" data-href="" style="width: 90%;">
+      </p>
+      <h2><span style="color: rgb(89, 191, 192);"><strong>Insect Feeding and Bioassays</strong></span></h2>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Prepare a small plastic box, use a pinhole to prick a hole in the lid of the
+        plastic box to make it breathable, put the artificial feed of <em>S. litura</em> in a 50mL syringe, squeeze the
+        artificial feed into each small plastic box, squeeze the feed about 1cm long each time and press it flat, use a
+        pipette to absorb 200μL of bacterial solution on the feed, open the lid and air dry naturally for 30min~1h, and
+        wait for the artificial feed to completely absorb the bacterial solution before the biological test. </p>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;The hatched larvae were placed in a small feed box (10 <em>S. litura</em> were
+        placed in each box), and the data were weighed on the 3rd, 5th, 7th, 9th, and 11th days of receiving the
+        insects, and the growth status was recorded, and the RNA was extracted for reverse transcription, and the
+        relative expression of its target gene <em>SlCHS1</em> was detected by qPCR. The sixth-instar larvae of <em>S.
+          litura</em> are placed on sandy soil (sandy soil should maintain a certain amount of moisture). On about the
+        twenty-fifth day, <em>S. litura</em>, the pupae of <em>S. litura</em> were photographed and their weight
+        measured, and they began to pupate into moths in about a week, during which the pupation rate, deformity rate,
+        and mortality rate were counted.</p>
+
+      <h2><span style="color: rgb(89, 191, 192);"><strong>Tobacco Plastid Transformation</strong></span></h2>
+      <h3><span style="color: rgb(114, 192, 64); font-size: 19px;"><strong>Construction of Vectors or Fragmented DNA for Plastid Transformation</strong></span>
+      </h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;The expression of amiRNA in the detection bacteria can effectively interfere with
+        the growth and development of <em>S. litura</em>, and then perform plastid transformation.</p>
+      <p><em><strong>Engineering Bacteria IV (Prrn: Tc-ba-miR-CHS1-1 ):</strong></em> To detect whether amiRNA-CHS1
+        expressed in plastid affects the expression level of SlCHS1 gene.</p>
+      <p><em><strong>Engineering Bacteria V (Prrn:Tc-ba-miR-CHS1-1 &amp; Prrn-SD：2xCP ): </strong></em>To detect whether
+        MS2-VLP expressed in plastid affects the expression level of SlCHS1 gene.</p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-success" src="https://static.igem.wiki/teams/5044/design-7-1.png" alt="" data-href="" style="width: 100%;"></p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-success-subtle" src="https://static.igem.wiki/teams/5044/design-8-1.png" alt="" data-href="" style="width: 100%;"></p>
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Plastid Transformation</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Using the endogenous homologous recombination mechanism of plant plastids, the
+        plastid expression vector was transformed into tobacco by gene gunning. Cut the leaves bombarded by the gene gun
+        into small pieces and transfer to callus induction medium containing spectinomycin for screening.</p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-warning" src="https://static.igem.wiki/teams/5044/design-9.png" alt="" data-href="" style="width: 80%;"></p>
+      <p style="text-align: center;">
+        <img class="rounded-4 border border-2 border-warning" src="https://static.igem.wiki/teams/5044/design-10.jpg" alt="" data-href="" style="width: 80%;"></p>
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Homogenization of Screening</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;After obtaining the resistance callus, the buds were induced on the regeneration
+        medium containing spectinomycin until the resistant shoots were obtained, and finally the resistant shoots were
+        transferred to the rooting medium to induce rooting, and the amiRNA plastid transformation tobacco was
+        obtained.</p>
+      <p style="text-align: center;"><img class="rounded-4 border border-2 border-info" src="https://static.igem.wiki/teams/5044/20240929111952.png" alt="微信图片_20240929111952.png" data-href="" style="width: 60%;"></p>
+      
+      <h2><span style="color: rgb(114, 192, 64);"><strong>Insect feeding and bioassays</strong></span></h2>
+      <p style="text-indent: 24pt;">The feed was changed to genetically modified tobacco leaves, and the previous
+        bioassay process was repeated.</p>
+      <p style="text-indent: 24pt; text-align: center;"><img class="rounded-4 border border-2 border-warning" src="https://static.igem.wiki/teams/5044/design-12.jpg" alt="" data-href="" style="width: 60%;"></p>
+      <h2><span style="color: rgb(89, 191, 192);"><strong>The Module of Biosafety</strong></span></h2>
+      <h3><span style="color: rgb(114, 192, 64);"><strong>No Plastids in the Pollen</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Plastids exhibit maternal inheritance, meaning they are not present in pollen,
+        which prevents the spread of transgenes via pollen and mitigates environmental safety issues. Another attraction
+        of PM‐RNAi approach for insect management is the exclusion of plastids from the sperm cells of pollen in most
+        angiosperm species. Therefore, pollinators and pollen‐eating insects are not exposed to substantial amounts of
+        plastid‐produced amiRNA.</p>
+
+      <h3><span style="color: rgb(114, 192, 64);"><strong>Highly targeted</strong></span></h3>
+      <p> &nbsp; &nbsp; &nbsp; &nbsp;Compared to siRNAs, amiRNA-based tactics are thought to be more effective due to
+        their high specificity and minimal off-target effect. By contrast, artificial microRNA has high sequence
+        specificity and only recognizes a target sequence with less than five mismatches.</p>
+      <p><br></p>
+      <h2><span style="color: rgb(89, 191, 192);"><strong>Reference</strong></span></h2>
+      <p>[1] Yu HZ, Li NY, Xie YX, Zhang Q, Wang Y, Lu ZJ. Identification and Functional Analysis of Two Chitin Synthase
+        Genes in the Common Cutworm, <em>Spodoptera litura</em>. Insects. 2020 Apr 17;11(4):253.</p>
+      <p>[2] Bock R, Khan MS. Taming plastids for a green future. Trends Biotechnol. 2004 Jun;22(6):311-8.</p>
+      <p>[3] Bally J, Fishilevich E, Doran RL, Lee K, de Campos SB, German MA, Narva KE, Waterhouse PM. Plin-amiR, a
+        pre-microRNA-based technology for controlling herbivorous insect pests. Plant Biotechnol J. 2020
+        Sep;18(9):1925-1932.</p>
+      <p>[4] Xu W, Li S, Bock R, Zhang J. A heat-inducible expression system for external control of gene expression in
+        plastids. Plant Biotechnol J. 2024 Apr;22(4):960-969.</p>
+      <p>[5] Arakane, Y.; Specht, C.A.; Kramer, K.J.; Muthukrishnan, S.; Beeman, R.W. Chitin synthase are required for
+        survival, fecundity and egg hatch in the red flour beetle, Tribolium castaneum. Insect Biochem. Mol. Biol. 2008,
+        38, 959–962.</p>
+      <p>[6] Xu W, Zhang M, Li Y, He W, Li S, Zhang J. Complete protection from <em>Henosepilachna
+        vigintioctopunctata</em> by expressing long double-stranded RNAs in potato plastids. J Integr Plant Biol. 2023
+        Apr;65(4):1003-1011.</p>
+      <p>[7] Wu M, Zhang Q, Dong Y, Wang Z, Zhan W, Ke Z, Li S, He L, Ruf S, Bock R, Zhang J. Transplastomic tomatoes
+        expressing double-stranded RNA against a conserved gene are efficiently protected from multiple spider mites.
+        New Phytol. 2023 Feb;237(4):1363-1373.</p>
+      <p>[8] Chen, H.; Yin, Y.P.; Li, Y.; Mahmud, M.S.; Wang, Z.K. Identification and analysis of genes differentially
+        expressed in the<em> Spodoptera litura </em>fat body in response to the biocontrol fungus, Nomuraea rileyi.
+        Comp. Biochem. Phys. B 2012, 163, 203–210.</p></section>
+    <div id="entry-wrapper" class="d-none d-md-block">
+      <div id="entry"><div class="item"><div class="title" style="color: rgb(0, 0, 0);">Plastid</div><div class="content"><p><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>Plastids</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"> are a group of organelles found in plant and algal cells. They are involved in the synthesis and storage of food, as well as in the production of pigments. The most well-known plastid is the </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>chloroplast</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">, which is responsible for </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>photosynthesis</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">, converting light energy into chemical energy stored in glucose. Other types of plastids include </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>chromoplasts</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">, which store pigments such as carotenoids, and </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>leucoplasts</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">, which store starch, lipids, and proteins. </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>Plastids have their own DNA, known as the plastome, and they can replicate independently of the cell's nucleus</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">.</span></p></div></div><div class="item"><div class="title" style="color: rgb(0, 0, 0);">Pollen</div><div class="content"><ul><li style="text-align: start;">Pollen Pollen is a fine, powdery substance consisting of microscopic grains (pollen grains) that are produced by the male parts of seed plants, specifically the anthers of angiosperms (flowering plants) and the microsporangia of gymnosperms (cone-bearing plants). Each pollen grain contains the male gametophyte, which includes the male reproductive cells necessary for fertilization. Pollen plays a critical role in the sexual reproduction of plants, and it is dispersed by various means, including wind, water, and animals, to reach the female part of the flower (the stigma) where it can germinate and initiate the formation of a pollen tube, leading to fertilization.</li></ul></div></div><div class="item"><div class="title" style="color: rgb(0, 0, 0);">Backbone (in Genetic Engineering)</div><div class="content"><p><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">In genetic engineering, a </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>backbone</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"> refers to the core structure of a vector, such as a plasmid, viral vector, or bacteriophage, into which foreign DNA fragments can be inserted. </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>The backbone provides essential elements for the propagation and maintenance of the construct within host cells, including origin of replication (ori), antibiotic resistance genes for selection, and sometimes regulatory elements</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">. By selecting appropriate backbones, researchers can control the expression of the inserted genes and ensure that the genetic material is stably inherited during cell division.</span></p></div></div><div class="item"><div class="title" style="color: rgb(0, 0, 0);">Chitin</div><div class="content"><p><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>Chitin</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"> is a long-chain polymer of N-acetylglucosamine, a derivative of glucose. It is a structural polysaccharide that forms a key component of the exoskeletons of arthropods, such as insects, crustaceans, and arachnids, as well as the cell walls of fungi. </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>Chitin is second only to cellulose in abundance among naturally occurring organic polymers</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">. Its properties, such as strength, flexibility, and resistance to many chemicals, make it an important material in nature. In biotechnology, </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>chitin and its derivatives, like chitosan, have various applications, including in wound healing, drug delivery, and water treatment</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">.</span></p></div></div><div class="item"><div class="title" style="color: rgb(0, 0, 0);">Chitin Synthase (CHS)</div><div class="content"><p><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>Chitin synthase</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"> is an enzyme that catalyzes the formation of </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>chitin from its monomer, N-acetylglucosamine (NAG)</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">. This enzyme is crucial for the development and maintenance of the exoskeleton in arthropods and the cell walls in fungi. There are multiple isoforms of chitin synthase, each with specific roles in different stages of development and in response to environmental conditions. </span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;"><strong>In pest management, chitin synthase is a target for the development of insecticides, as inhibiting this enzyme can disrupt the growth and survival of pests</strong></span><span style="color: rgb(44, 44, 54); background-color: rgb(255, 255, 255); font-size: 16px;">.</span></p></div></div></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename = 'js/sidebar.js') }}"></script>
+  <script>
+    initAnchors(100, 560);
+    initEntry();
+  </script>
+{% endblock %}

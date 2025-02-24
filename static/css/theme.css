@@ -1,0 +1,294 @@
+a {
+  color: #0969da;
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
+.wiki-editor-container img {
+  width: 100%;
+  box-shadow: 0.4rem 0.4rem 0.1rem 0 #e7db67;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.wiki-editor-container-no-auth img {
+  width: 100%;
+  box-shadow: 0.4rem 0.4rem 0.1rem 0 #e7db67;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+blockquote {
+  display: block;
+  padding: 0 1em;
+  margin: 0 0 16px;
+  unicode-bidi: isolate;
+  color: #636c76;
+  border-left: 0.25em solid #d0d7de;
+}
+
+code {
+  background: #eff1f3;
+  padding: 0.2em 0.4em;
+  border-radius: 0.375em;
+  font-size: 0.9em;
+  color: #2e3436;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #d0d7deb3;
+}
+
+h2 a {
+  color: #1F2328;
+  text-decoration: none;
+}
+
+h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.7em;
+  border-bottom: 1px solid #d0d7deb3;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h3 a {
+  color: #1F2328;
+  text-decoration: none;
+}
+
+h3 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h4 a {
+  color: #1F2328;
+  text-decoration: none;
+}
+
+h4 {
+  padding-bottom: 0.3em;
+  font-size: 1.2em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h5 a {
+  color: #1F2328;
+  text-decoration: none;
+}
+
+h5 {
+  padding-bottom: 0.3em;
+  font-size: 1em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h6 a {
+  color: #1F2328;
+  text-decoration: none;
+
+}
+
+h6 {
+  padding-bottom: 0.3em;
+  font-size: 0.9em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+hr {
+  border: 0 solid #e3e8f0;
+  border-top-width: 1px;
+  margin: 3em 0;
+}
+
+li {
+  margin: 12px 0;
+}
+
+li::marker {
+  color: #3881da;
+}
+
+ol {
+  margin: 12px 0;
+}
+
+ol::marker {
+  color: #3881da;
+}
+
+ul {
+  margin: 12px 0;
+}
+
+ul::marker {
+  color: #3881da;
+}
+
+p {
+  display: block;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 16px;
+  /* margin-block-start: 1em; */
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+pre {
+  display: flex;
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #f6f8fa;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.5em;
+  border-radius: 0.375em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+pre > code {
+  word-break: normal;
+}
+
+table, tbody, tr, th, td {
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+table {
+  font-family: Arial, -apple-system, sans-serif;
+  box-sizing: border-box;
+
+  tbody {
+
+    tr {
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        background: #e3ebd6;
+      }
+
+      &:first-child {
+        background: #e2ebd6;
+        text-align: center;
+        color: #37603e;
+        height: 2.4rem;
+        line-height: 2.4rem;
+
+        * {
+          pointer-events: none;
+        }
+      }
+
+      td {
+        border: 1px solid #e3ebd6;
+        padding: 3px 5px;
+        transition: all 200ms ease-in-out;
+        max-width: 20rem;
+        min-width: 6rem;
+
+        &:hover {
+          background: #37603e;
+          color: #c8b402;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+
+.edu1 {
+  font-style: italic;
+}
+
+.edu2 {
+  width: 840px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: green;
+  height: 100px;
+  color: white;
+  font-size: 16px;
+  border-radius: 10%;
+}
+
+.edu3 {
+  text-align: right;
+}
+
+.edu4 {
+  color: rgb(237, 230, 33);
+}
+
+.edu5 {
+  color: #59fcc6;
+}
+
+.edu6 {
+  color: rgb(237, 230, 33);
+  text-decoration: underline;
+}
+
+.edu7 {
+  width: 840px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: green;
+  height: 150px;
+  color: white;
+  font-size: 16px;
+  border-radius: 10%;
+}
+
+
+.home1 {
+  height: 250px;
+}
+
+
+.entre1 {
+  color: rgb(110, 215, 6);
+}
+
+.entre2 {
+  text-align: center;
+}
+
+.model1 {
+  height: 500px;
+  text-align: center;
+}
+
+
+

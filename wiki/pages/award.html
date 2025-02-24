@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Design{% endblock %}
+
+{% block page_content %}
+  <section class="header-box"></section>
+  <div class="px-2 px-lg-5 d-flex flex-row">
+    <div class="d-none d-lg-block" style="min-width: 280px; position: relative">
+      <div id="anchors">
+        <div class="title">Contents</div>
+        <ul id="anchors-list"></ul>
+      </div>
+    </div>
+    <section class="py-5 container wiki-editor-container"></section>
+    <div id="entry-wrapper" class="d-none d-md-block">
+      <div id="entry"></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename = 'js/sidebar.js') }}"></script>
+  <script>
+    initAnchors(100, 560);
+    initEntry();
+  </script>
+{% endblock %}

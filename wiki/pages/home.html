@@ -1,0 +1,1152 @@
+{% extends "layout.html" %} {% block title %}Home{% endblock %} {% block
+page_content %}
+  <style>
+    .swiper {
+      block-size: 100vh;
+    }
+
+    .swiper-slide {
+      position: relative;
+      block-size: 100vh;
+
+      & > div {
+        margin: calc(50vh) auto 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    body {
+      min-inline-size: 50rem;
+      overflow: hidden;
+    }
+
+    .first-gif {
+      position: relative;
+      inline-size: 100vw;
+      block-size: 100vh;
+      overflow: hidden;
+
+      img {
+        inline-size: 100vw;
+        block-size: auto;
+      }
+    }
+
+    .hubu-box {
+      position: relative;
+
+      & > div {
+        inline-size: 100%;
+
+        &:nth-child(1) {
+          position: absolute;
+          z-index: 2;
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          z-index: 1;
+        }
+
+        &:nth-child(1) > img {
+          position: absolute;
+          inline-size: 60%;
+          inset-inline-start: 50%;
+          inset-block-start: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:nth-child(2) > img {
+          position: absolute;
+          inline-size: 100%;
+          inset-inline-start: 50%;
+          inset-block-start: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .start-text {
+      position: absolute;
+      display: inline-block;
+      inset-block-start: 65%;
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 2.4rem;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      color: #6d966b;
+      text-decoration: none;
+      background: rgba(255, 249, 233, 0.7);
+      backdrop-filter: blur(0.6rem);
+      border-radius: 0.4rem;
+      padding: 0.4rem 1rem;
+      box-shadow: 0.1rem 0.1rem 0.4rem #bfbbb0;
+    }
+
+    .introduce-box {
+      position: relative;
+      padding: 6rem 3rem;
+      font-size: 1.6rem;
+      inline-size: 80vmin;
+      background: #5a8863;
+      box-sizing: content-box;
+      border-radius: 1.4rem;
+      border: 0.6rem solid #ebe1aa;
+
+      .introduce-hello-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset-block-start: -5rem;
+        inset-inline-start: -4rem;
+        font-size: 1.4rem;
+        line-height: 0.7;
+        inline-size: 12rem;
+        block-size: 8rem;
+        background: url("https://static.igem.wiki/teams/5044/hello-2.png") no-repeat center;
+        background-size: contain;
+
+        & > div > div {
+          &:nth-child(1) {
+            text-indent: -1rem;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+        inline-size: 12rem;
+
+        &:nth-child(1) {
+          inset-inline-start: -6rem;
+          inset-block-end: -4rem;
+        }
+
+        &:nth-child(2) {
+          inset-inline-end: -8rem;
+          inset-block-end: -4rem;
+        }
+      }
+
+      .introduce-text {
+        color: #ffffff;
+      }
+    }
+
+    .tobacoo-box {
+      position: relative;
+      padding: 6rem 3rem;
+      font-size: 1.4rem;
+      inline-size: 80vmin;
+      background: #bbdbd7;
+      box-sizing: content-box;
+      border-radius: 1.4rem;
+      box-shadow: -0.8rem 0.8rem 0 #98beb9;
+      color: #585858;
+
+      img {
+        position: absolute;
+        inline-size: 12rem;
+
+        &:nth-child(1) {
+          inset-inline-start: -2rem;
+          inset-block-end: -3rem;
+          inline-size: 14rem;
+        }
+
+        &:nth-child(2) {
+          inset-inline-start: -3rem;
+          inset-block-start: -6rem;
+          inline-size: 8rem;
+        }
+
+        &:nth-child(3) {
+          inset-inline-end: -2rem;
+          inset-block-end: -2rem;
+          inline-size: 6rem;
+        }
+
+        &:nth-child(4) {
+          inset-inline-start: -3.2rem;
+          inset-block-end: -4.4rem;
+          inline-size: 18rem;
+        }
+      }
+    }
+
+    .extensive-box {
+      margin: 0 auto;
+      font-size: 1.4rem;
+      inline-size: 46rem;
+      text-align: justify;
+
+      .extensive-divider {
+        position: relative;
+        margin: auto;
+        inline-size: calc(100% - 1.6rem);
+        block-size: 0.4rem;
+        background: #a3b7a0;
+        border-radius: 0.2rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset-inline-start: 50%;
+          inset-block-start: 50%;
+          transform: translate(-50%, -50%);
+          inline-size: 1.6rem;
+          block-size: 1.6rem;
+          border-radius: 50%;
+          background: #a3b7a0;
+        }
+      }
+    }
+
+    .pic-box {
+      margin: 2rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      inline-size: 46rem;
+
+      .pic-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        inline-size: 30%;
+        transition: transform 0.5s ease;
+        overflow: hidden;
+        block-size: 260px;
+
+        img {
+          inline-size: 100%;
+          block-size: 220px;
+        }
+
+        .pic-text {
+          margin-block-start: 0.4rem;
+          text-align: center;
+          font-size: 1.6rem;
+          text-wrap: nowrap;
+        }
+
+        .pic-content {
+          block-size: 260px;
+          line-height: 260px;
+          padding: 1rem;
+          text-align: center;
+          font-size: 1.6rem;
+        }
+
+        .pic-item-inner {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: transform 0.5s ease;
+        }
+      }
+
+      .pic-item:hover .pic-item-inner {
+        transform: translateY(-260px);
+      }
+    }
+
+    .tech-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      inline-size: 46rem;
+
+      .tech-divider-text {
+        margin-block-start: -3rem;
+        margin-block-end: -3rem;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bolder;
+        text-shadow: -0.3rem -0.3rem #b97070;
+        color: #dea2a2;
+        text-wrap: nowrap;
+        z-index: 100;
+      }
+
+      .tech-item {
+        font-size: 1.4rem;
+
+        .tech-image {
+          inline-size: 20rem;
+          box-sizing: border-box;
+          border: 0.5rem solid #ffd494;
+          border-radius: 0.4rem;
+        }
+      }
+    }
+
+    .desc-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      inline-size: 46rem;
+      padding: 1rem 2rem;
+      background: #5a8863;
+      font-size: 1.4rem;
+      color: #ffffff;
+      border-radius: 1rem;
+
+      .desc-content {
+        position: relative;
+        text-indent: 2rem;
+        border-radius: 1rem;
+        background: #669e71;
+        padding: 1.4rem 1.4rem 4rem;
+
+        div {
+          &:nth-child(1) {
+            position: absolute;
+            inset-inline-start: 50%;
+            inset-block-start: -8.6rem;
+            inline-size: 20rem;
+            block-size: 16rem;
+            line-height: 12rem;
+            text-indent: 4.2rem;
+            transform: translateX(-50%);
+            z-index: -1;
+            color: #81b05a;
+            font-size: 2.4rem;
+            background: url("https://static.igem.wiki/teams/5044/desc-1.png") no-repeat center;
+            background-size: contain;
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            inset-block-end: -5rem;
+            inset-inline-end: -12rem;
+            inline-size: 12rem;
+            block-size: 12rem;
+            line-height: 12rem;
+            text-indent: 2.2rem;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: #81b05a;
+            font-size: 1.5rem;
+            background: url("https://static.igem.wiki/teams/5044/desc-3.png") no-repeat center;
+            background-size: contain;
+          }
+        }
+
+        img {
+          position: absolute;
+          inline-size: 12rem;
+          inset-inline-start: -6.4rem;
+          inset-block-end: -3rem;
+          z-index: 2;
+        }
+
+        & > div {
+          position: relative;
+          z-index: 100;
+        }
+      }
+
+      .desc-tip-text {
+        position: absolute;
+        inset-inline-start: 10rem;
+        inset-block-end: -4rem;
+        inline-size: 28rem;
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        background: #f6efc8;
+        box-shadow: 1rem 1rem 2px #be892e;
+        color: #000000;
+        border-radius: 1rem;
+        z-index: 2;
+      }
+    }
+
+    .advantages-box {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-inline-size: 52rem;
+      text-wrap: nowrap;
+      gap: 8rem;
+
+      .advantages-left {
+        position: relative;
+        min-inline-size: 24rem;
+        max-inline-size: 24rem;
+        min-block-size: 24rem;
+        max-block-size: 24rem;
+        box-shadow: 0 0 10px 0 #666666;
+        text-align: center;
+        line-height: 1.2;
+        border-radius: 50%;
+        transform: rotate(90deg);
+        background: #ebf1de;
+        transition: 1s ease-in-out;
+
+        .advantages-left-center-text {
+          position: absolute;
+          inset-block-start: 50%;
+          inset-inline-start: 50%;
+          transform: translate(-50%, -50%) rotate(-90deg);
+          font-size: 1.6rem;
+          color: #4f6228;
+          transition: 1s ease-in-out;
+        }
+
+        .advantages-left-round-text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          position: absolute;
+          font-size: 1.2rem;
+          border-radius: 50%;
+          inline-size: 7.6rem;
+          block-size: 7.6rem;
+          color: #ffffff;
+          background: #77933c;
+          border: 2px solid #99ff99;
+          cursor: pointer;
+          transition: all 1s ease-in-out, box-shadow 0.3s;
+
+          &:hover {
+            box-shadow: 0 0 0.2rem 0.2rem #799338;
+          }
+
+          &:nth-child(1) {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+          }
+
+          &:nth-child(2) {
+            inset-inline-end: 1rem;
+            inset-block-end: 0;
+            transform: translate(50%, 0) rotate(-90deg);
+          }
+
+          &:nth-child(3) {
+            inset-inline-start: 1rem;
+            inset-block-end: 0;
+            transform: translate(-50%, 0) rotate(-90deg);
+          }
+        }
+
+        .advantages-left-round-text-active {
+          inline-size: 10rem;
+          block-size: 10rem;
+          font-size: 1.6rem;
+        }
+      }
+
+      .advantages-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        max-inline-size: 20rem;
+        transition: all 0.7s ease-in-out;
+
+        .advantages-right-item {
+          display: none;
+          opacity: 0;
+          transform: translateX(100%);
+          transition: all 0.7s ease-in-out;
+        }
+
+        .advantages-right-show {
+          display: block;
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .epilogue-box {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.4rem;
+      color: #ffffff;
+      box-sizing: border-box;
+      text-align: center;
+
+      .epilogue-content {
+        position: relative;
+        width: 40rem;
+
+        img {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          width: 40rem;
+          z-index: -1;
+        }
+      }
+
+      iframe {
+        border-radius: 1rem;
+      }
+    }
+
+    .end-box {
+      img {
+        inline-size: 100%;
+      }
+    }
+
+    .ms2-bix {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .content {
+      inline-size: 35%;
+    }
+
+    .content h1 {
+      color: #008000;
+      font-size: 28px;
+      margin-block-end: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .content h1::before {
+      content: "🦠";
+      margin-inline-end: 10px;
+      font-size: 36px;
+    }
+
+    .content ul {
+      list-style-type: disc;
+      padding-inline-start: 20px;
+      border: 2px solid #008000;
+      padding-inline-end: 10px;
+    }
+
+    .content ul li {
+      margin-block-end: 15px;
+      font-size: 18px;
+      margin-inline-start: 20px;
+      color: #008000;
+    }
+
+    .content ul li strong {
+      color: red;
+    }
+
+    .protein-info {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-block-start: 20px;
+    }
+
+    .protein-info div {
+      margin-inline-end: 10px;
+    }
+
+    .protein-info div p {
+      margin: 0;
+      padding: 5px 10px;
+      background-color: #fdd835;
+      color: black;
+      border: 1px solid black;
+      font-size: 14px;
+    }
+
+    .protein-info p.description {
+      margin-inline-start: 10px;
+    }
+
+    .image-container {
+      inline-size: 40%;
+      overflow: clip;
+      object-position: center;
+    }
+
+    .image-container img {
+      inline-size: 200%;
+      transform: translateX(-30%);
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    document
+      .getElementsByClassName("Description")
+      .addEventListener("click", function () {
+        var img = document.getElementsByClassName("Description_img");
+
+        if (!img.classList.contains("show")) {
+          img.style.display = "block"; // 确保在动画前显示图片
+          setTimeout(function () {
+            img.classList.add("show"); // 添加 class，触发过渡效果（淡入）
+          }, 10); // 加一个微小的延迟，确保 `display` 生效后才添加动画
+        } else {
+          img.classList.remove("show"); // 移除 class，触发淡出效果
+          setTimeout(function () {
+            img.style.display = "none"; // 动画结束后隐藏图片
+          }, 500); // 与 transition 时间匹配，确保动画完成后隐藏
+        }
+      });
+
+    function img() {
+      var imgs = document.getElementsByClassName("img-1");
+      for (var i = 0; i < imgs.length; i++) {
+        if (imgs[i].style.display === "none" || imgs[i].style.display === "") {
+          imgs[i].style.display = "block"; // 显示图像
+        } else {
+          imgs[i].style.display = "none"; // 隐藏图像
+        }
+      }
+    }
+  </script>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div
+            class="first-gif ani"
+            swiper-animate-effect="fadeIn"
+            swiper-animate-duration="0.3s"
+        >
+          <img
+              src="https://static.igem.wiki/teams/5044/bea-homepagevedio-650.gif"
+              alt=""
+          />
+          <a class="start-text" onclick="startJourney()">Let's start <span
+              style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span
+              style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span
+              style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span
+              style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span
+              style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> journey into Plant<span
+              style="color: green">Syn</span>Bio！</a>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hubu-box">
+          <div
+              class="ani"
+              swiper-animate-effect="bounceInRight"
+              swiper-animate-duration="0.8s"
+          >
+            <img
+                src="https://static.igem.wiki/teams/5044/hubu-china.png"
+                alt=""
+            />
+          </div>
+          <div
+              class="ani"
+              swiper-animate-effect="bounceInLeft"
+              swiper-animate-duration="0.8s"
+          >
+            <img src="https://static.igem.wiki/teams/5044/tape.png" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="introduce-box">
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInRight"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/hello-1.png"
+              alt=""
+          />
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInLeft"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/hello-3.png"
+              alt=""
+          />
+          <div
+              class="introduce-hello-text ani"
+              swiper-animate-effect="fadeInLeft"
+              swiper-animate-duration="0.8s"
+          >
+            <div>
+              <div>Hello</div>
+              <div>everyone!</div>
+            </div>
+          </div>
+          <div
+              class="introduce-text ani"
+              swiper-animate-effect="bounceIn"
+              swiper-animate-duration="0.8s"
+          >
+            <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span
+              style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span
+              style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span
+              style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span
+              style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>, developed by HUBU-China, is ready to
+            share the journey of plastid-mediated RNAi (PM-RNAi) technology for pest control.
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="tobacoo-box">
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInLeft"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/tobacoo-1.png"
+              alt=""
+          />
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInLeft"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/tobacoo-2.png"
+              alt=""
+          />
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInRight"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/tobacoo-3.png"
+              alt=""
+          />
+          <img
+              class="ani"
+              swiper-animate-effect="fadeInLeft"
+              swiper-animate-duration="0.8s"
+              src="https://static.igem.wiki/teams/5044/tobacoo-4.png"
+              alt=""
+          />
+          <div
+              class="ani"
+              swiper-animate-effect="bounceIn"
+              swiper-animate-duration="0.8s"
+          >
+            <div
+                style="block-size: 10rem; inline-size: 1px; float: inline-start"
+            ></div>
+            <img
+                style="
+              opacity: 0;
+              position: relative;
+              inline-size: 14rem;
+              block-size: 7rem;
+              float: inline-start;
+              clear: inline-start;
+              margin-inline-start: -5rem;
+              margin-inline-end: 1rem;
+            "
+                src="https://static.igem.wiki/teams/5044/tobacoo-1.png"
+                alt=""
+            />
+            <div>
+              <span style="margin-inline-start: 2rem">According </span> to the
+              Food and Agriculture Organization of the United Nations, pests
+              destroy up to 40% of the world's crops, causing $220 billion in
+              lose.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div>
+          <div class="extensive-box">
+            <p
+                class="extensive-box-text ani"
+                swiper-animate-effect="flipInX"
+                swiper-animate-duration="0.8s"
+            >
+              The extensive use of chemical pesticides not only creates serious
+              resistance management problems, but also brings huge risks to
+              environmental safety, food safety and human health.
+            </p>
+            <div
+                class="extensive-divider ani"
+                swiper-animate-effect="fadeInRight"
+                swiper-animate-duration="0.8s"
+            ></div>
+          </div>
+          <div class="pic-box">
+            <div
+                class="pic-item ani"
+                swiper-animate-effect="slideInLeft"
+                swiper-animate-duration="0.8s"
+            >
+              <div class="pic-item-inner">
+                <img src="https://static.igem.wiki/teams/5044/pic-2.jpg" alt=""/>
+                <div class="pic-text">Pest</div>
+                <!-- <div class="pic-content" style="overflow: auto;">More than:600·pests*have been*reported to·be resistant·to atleast·one pesticide, andtheir.sensitivityto"pesticides has*decreased·or even*disappeared, resulting in reduced·orineffective pest*controland·farmers:having to*use*more"pesticides·to protect*crops</div> -->
+                <div style="overflow: auto">
+                  More than 600 pests have been reported to be resistant to at
+                  least one pesticide, and their sensitivity to pesticides has
+                  decreased or even disappeared, resulting in reduced or
+                  ineffective pest control and farmers having to use more
+                  pesticides to protect crops
+                </div>
+              </div>
+            </div>
+            <div
+                class="pic-item ani"
+                swiper-animate-effect="slideInUp"
+                swiper-animate-duration="0.8s"
+            >
+              <div class="pic-item-inner">
+                <img src="https://static.igem.wiki/teams/5044/pic-1.jpg" alt=""/>
+                <div class="pic-text">Gut</div>
+                <!-- <div class="pic-content">Gut health</div> -->
+                <div style="overflow: auto">
+                  Long-term exposure to pesticides can be potentially harmful to
+                  human gut health, affect nervous system development, induce
+                  cancer, and cause damage to the reproductive system, liver,
+                  brain, and other parts of the body
+                </div>
+              </div>
+            </div>
+            <div
+                class="pic-item ani"
+                swiper-animate-effect="slideInRight"
+                swiper-animate-duration="0.8s"
+            >
+              <div class="pic-item-inner">
+                <img src="https://static.igem.wiki/teams/5044/pic-3.jpg" alt=""/>
+                <div class="pic-text">Environment</div>
+                <!-- <div class="pic-content">Environmental pollution</div> -->
+                <div style="overflow: auto">
+                  When pesticides are sprayed, only about 30% fall on crops, and
+                  the remaining 70% spread to the soil and atmosphere. If the soil
+                  is polluted by pesticides for a long time, there will be obvious
+                  acidification, soil nutrient loss and soil porosity will become
+                  smaller, resulting in soil compaction, which will affect the
+                  growth of crops
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="tech-box">
+          <div class="tech-item">
+            <img
+                class="tech-image float-start me-3 ani"
+                swiper-animate-effect="fadeInLeft"
+                swiper-animate-duration="0.8s"
+                src="https://static.igem.wiki/teams/5044/tech-1.jpg"
+                alt=""
+            />
+            <div
+                class="ani"
+                swiper-animate-effect="fadeInRight"
+                swiper-animate-duration="0.8s"
+            >
+              Pests have developed biological resistance to existing control
+              methods, and the use of RNAi technology to control insects is of
+              great innovative significance.
+            </div>
+          </div>
+          <div
+              class="tech-divider-text ani"
+              swiper-animate-effect="zoomInDown"
+              swiper-animate-duration="0.8s"
+          >
+            NEW TECHNOLOGY
+          </div>
+          <div class="tech-item">
+            <img
+                class="tech-image float-end ms-3 ani"
+                swiper-animate-effect="fadeInRight"
+                swiper-animate-duration="0.8s"
+                src="https://static.igem.wiki/teams/5044/tech-2.jpg"
+                alt=""
+            />
+            <div
+                class="pt-5 ani"
+                swiper-animate-effect="fadeInLeft"
+                swiper-animate-duration="0.8s"
+            >
+              This year, HUBU-China also focuses on this issue, trying to manage <em>Spodotera litura</em> through
+              PM-RNAi technology.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="desc-box">
+          <div class="desc-content">
+            <div>PM-RNAi</div>
+            <div class="Description"
+                 onclick="img()">Description
+            </div>
+            <img
+                class="ani"
+                swiper-animate-effect="swing"
+                swiper-animate-duration="0.8s"
+                src="https://static.igem.wiki/teams/5044/desc-2.png"
+                alt=""
+            />
+
+            <div id="img" class="img-1" style="display: none">
+              <img
+                  src="https://static.igem.wiki/teams/5044/home02.png"
+                  class="img-fluid"
+              />
+            </div>
+
+            <div
+                class="desc-text ani"
+                swiper-animate-effect="fadeIn"
+                swiper-animate-duration="0.8s"
+            >
+              In this project, we attempted to expressing artificial microRNA (amiRNA) targeting the chitin synthase 1
+              (CHS1) gene of <em>S. litura</em> from the genome of tobacco plastid. To protect the degradation of amiRNA
+              caused
+              by highly active nuclease in <em>S. litura</em>, amiRNA was delivered by a bacteriophage MS2 virus-like
+              particle
+              (VLP)-based delivery system.
+            </div>
+          </div>
+          <div
+              class="desc-tip-text ani"
+              swiper-animate-effect="fadeInUp"
+              swiper-animate-duration="0.8s"
+          >
+            RNAi technology is used to degrade target mRNA, resulting in gene
+            silencing of S. litura, an important lepidopteran pest.
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="advantages-box">
+          <div class="advantages-left">
+            <div
+                class="advantages-left-round-text advantages-left-round-text-active"
+            >
+              <div>High</div>
+              <div>expression</div>
+            </div>
+            <div class="advantages-left-round-text">
+              <div>Maternal</div>
+              <div>inheritance</div>
+            </div>
+            <div class="advantages-left-round-text">
+              <div>No</div>
+              <div>positional</div>
+              <div>effect</div>
+            </div>
+            <div class="advantages-left-center-text">
+              <div>Advantages</div>
+              <div>of</div>
+              <div>plastids</div>
+            </div>
+          </div>
+          <div class="advantages-right">
+            <div
+                class="advantages-right-item advantages-right-show animate__animated animate__fadeInRight"
+            >
+              <div class="d-flex justify-content-center align-items-center">
+                <div
+                    class="d-flex flex-column justify-content-center align-items-center"
+                >
+                  <div>
+                    <img
+                        style="inline-size: 12rem"
+                        src="https://static.igem.wiki/teams/5044/home-nuclear.png"
+                        alt=""
+                    />
+                  </div>
+                  <div
+                      class="px-3 rounded-2"
+                      style="font-size: 1.6rem; background: #d2b08e; color: #ffffff"
+                  >
+                    Nuclear
+                  </div>
+                </div>
+                <div class="ms-3 text-center">
+                  <div
+                      class="fw-bold"
+                      style="
+                    font-size: 4rem;
+                    line-height: 1.2;
+                    color: #7d9a3f;
+                    text-shadow: 3px 3px 2px #465723;
+                  "
+                  >
+                    low
+                  </div>
+                  <div style="font-size: 1.8rem; color: #4f6228">Copy number</div>
+                </div>
+              </div>
+              <div class="mt-5 d-flex justify-content-center align-items-center">
+                <div
+                    class="d-flex flex-column justify-content-center align-items-center"
+                >
+                  <div>
+                    <img
+                        style="inline-size: 12rem"
+                        src="https://static.igem.wiki/teams/5044/home-plastid.png"
+                        alt=""
+                    />
+                  </div>
+                  <div
+                      class="px-3 rounded-2"
+                      style="font-size: 1.6rem; background: #295d83; color: #ffffff"
+                  >
+                    plastid
+                  </div>
+                </div>
+                <div class="ms-3 text-center">
+                  <div style="font-size: 1.8rem; color: #4f6228">Copy number</div>
+                  <div
+                      class="fw-bold"
+                      style="
+                    font-size: 4rem;
+                    line-height: 1.2;
+                    color: #7d9a3f;
+                    text-shadow: 3px 3px 2px #465723;
+                  "
+                  >
+                    <div>About</div>
+                    <div>10000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+                class="advantages-right-item animate__animated animate__fadeInRight"
+            >
+              <div class="d-flex align-items-center">
+                <img
+                    style="inline-size: 18rem"
+                    src="https://static.igem.wiki/teams/5044/home-maternal.png"
+                    alt=""
+                />
+                <div
+                    style="
+                  margin-block-start: -3rem;
+                  font-size: 2rem;
+                  line-height: 1.2;
+                  color: #7d9a3f;
+                "
+                >
+                  <div>No plastids in</div>
+                  <div>pollen</div>
+                </div>
+              </div>
+            </div>
+            <div
+                class="advantages-right-item animate__animated animate__fadeInRight"
+            >
+              <div class="d-flex align-items-center" style="flex: auto;overflow: clip;width: 24rem;height: 24rem;">
+                <img
+                    style="width: 140%;display: block;position: absolute;left: -10rem;top: -2rem;"
+                    src="https://static.igem.wiki/teams/5044/homegif06.gif"
+                    alt=""
+                />
+                <img
+                    style="width: 140%;display: block;position: absolute;left: -10rem;top: 6rem;"
+                    src="https://static.igem.wiki/teams/5044/homegif5.gif"
+                    alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container ms2-bix">
+          <div class="content ani"
+               swiper-animate-effect="fadeInRight"
+               swiper-animate-duration="0.8s">
+            <h1>MS2 Virus-like Particle (VLP)</h1>
+            <ul>
+              <li>
+                The specific interaction between
+                <strong>coat protein</strong> monomer of MS2 bacteriophage (CP)
+                and <strong>pac site</strong> can package specific exogenous RNA.
+              </li>
+              <li>
+                The assembled MS2 VLP has a <strong>stable structure</strong> that
+                can protect the target RNA from being degraded by nucleases.
+              </li>
+            </ul>
+            <div class="protein-info">
+              <div>
+                <!-- <p>CP</p>
+                <p>Coat protein monomer of MS2 bacteriophage</p> -->
+                <img
+                    src="https://static.igem.wiki/teams/5044/home04.png"
+                    class="img-fluid"
+                />
+              </div>
+              <!-- <div>
+                <p>CP</p>
+                <p>Coat protein dimer of MS2 with TAT fragment</p>
+              </div>
+              <p class="description"><span style="color: red;">HIV TAT fragment</span></p> -->
+            </div>
+          </div>
+          <div class="image-container ani"
+               swiper-animate-effect="fadeInLeft"
+               swiper-animate-duration="0.8s">
+            <img
+                src="https://static.igem.wiki/teams/5044/vlp.gif"
+                alt="MS2 Virus-like particle structure"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="epilogue-box">
+          <div
+              class="epilogue-content ani"
+              swiper-animate-effect="bounceInLeft"
+              swiper-animate-duration="0.8s"
+          >
+            <div>PLASTID PESTICIDEST™</div>
+            <div>firmly believe that</div>
+            <div>plastid-mediated RNAi technology</div>
+            <div>is an effective approach</div>
+            <div>for pest insect management</div>
+            <img src="https://static.igem.wiki/teams/5044/home01.png" alt="">
+          </div>
+          <div
+              class="ani"
+              swiper-animate-effect="bounceInRight"
+              swiper-animate-duration="0.8s">
+            <iframe
+                title="HUBU-China: Engineering Tobacco Plants to Fight Pests: Plastid Genetic modificat... (2024) - Project Promotion [English]"
+                width="560" height="315" src="https://video.igem.org/videos/embed/33317f35-54b9-4992-a306-a84ff248fd7e"
+                frameborder="0" allowfullscreen=""
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="position: relative; inline-size: 100%; block-size: 100%">
+          <div class="end-box">
+            <img src="https://static.igem.wiki/teams/5044/end.png" alt=""/>
+          </div>
+          <div
+              style="
+            position: absolute;
+            inset-block-end: 0rem;
+            inset-inline-start: 0;
+            inline-size: 100%;
+          "
+          >
+            {% include 'footer.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+{% endblock %}

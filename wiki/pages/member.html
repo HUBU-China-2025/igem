@@ -1,0 +1,740 @@
+{% extends "layout.html" %}
+{% block title %}Member{% endblock %}
+
+{% block page_content %}
+
+<style>
+@media (max-width: 768px) {
+    .box {
+        width: 100% !important;
+    }
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    border: 5px solid rgb(100, 100, 126);
+    background-color: #fff;
+}
+
+.card>img {
+    border-radius: 5px;
+    background-color: rgb(252, 254, 252);
+    width: 200%;
+    height: 85%;
+    min-height: 85%;
+    object-fit: cover;
+    transition: .5s;
+    max-width: 100%;
+}
+
+.card>p {
+    text-align: center;
+    height: 15%;
+    min-height: 15%;
+    line-height: 15%;
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.card-content {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    transition: .5s;
+    overflow: auto;
+    font-family: NunitoRegular, sans-serif !important;
+}
+
+
+.card-content-img {
+    width: 130px;
+    height: 130px;
+    border: 3px solid rgba(54, 25, 25, .5);
+    border-radius: 80px;
+    overflow: hidden;
+    margin: 10px auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.card-content-name {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.28571429rem;
+}
+
+.card-content-text {
+    line-height: 1.1;
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .card:hover {
+        flex-basis: 50%;
+    }
+    
+    .card:hover>img {
+      margin-top: -360px;
+    }
+    
+    .card:hover>h3 {
+      margin-top: -80px;
+        transition: .5s;
+    }
+}
+
+@media (max-width: 768px) {
+    .card:hover {
+        flex-basis: 50%;
+    }
+    
+    .card:hover>img {
+        margin-top: -360px;
+    }
+    
+    .card:hover>h3 {
+        margin-top: -80px;
+        transition: .5s;
+    }
+    .card>p {
+        font-size: 18px;
+    }
+}
+
+.groupcontent{
+    font-size: 20px;
+}
+
+.groupcontent1{
+    margin-top: 50px;
+    background-color: hwb(149 70% 4%);
+}
+</style>
+
+<section class="header-box"></section>
+<section class="container pt-3 w-75 box">
+    
+    <div class="groupcontent">
+        <h1>Team Leaders</h1>
+    </div>
+    
+    <div class="card-container ">
+      <div class="card">
+          <img src="https://static.igem.wiki/teams/5044/chuming.jpg" class="" alt="" loading="lazy">
+          <p class="p-1">Chuming Chen</p>
+          <div class="card-content">
+              <div class="card-content-img">
+                  <img src="https://static.igem.wiki/teams/5044/chuming-chen.jpg" loading="lazy" alt="HUBU-Hubei-China">
+              </div>
+              <div class="card-content-name">Chuming Chen</div>
+              <div class="card-content-text">
+                Hello there!
+
+                My name is Chen Chuming, and I'm thrilled to be part of this year's iGEM adventure! As the student leader, I've jumped headfirst into the world of synthetic biology, embracing every challenge and discovery with enthusiasm.
+                
+                From the very start, I've been involved in conceptualizing <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> project, diving deep into the realms of genetic engineering and biotechnology. You'll often find me knee-deep in experiments, whether it's constructing plasmid transformation vectors or conducting particle bombardments. There's something incredibly satisfying about seeing those resistant shoots emerge after careful screening and identification!
+                
+                But it's not all pipettes and petri dishes. When I'm not in the lab, I'm usually working on <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> team's Wiki, making sure it's not just informative but also engaging. I've been having a blast designing the layout and crafting content that tells <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> story—<span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> successes, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> setbacks, and everything in between.
+                
+                Outside of iGEM, I love to unwind with a good book or by exploring the great outdoors. Balancing the intense pace of research with moments of relaxation helps keep me grounded and ready for whatever comes next.
+                
+                Joining iGEM has been an incredible journey, filled with learning, laughter, and lots of late-night brainstorming sessions. It's been a privilege to work alongside such talented and dedicated teammates, and I can't wait to see what <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> achieve together on this exciting stage of synthetic biology!
+                
+                Cheers to making waves in the world of science!  
+              </div>
+          </div>
+      </div>
+      <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/ludan.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Ludan He</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team2-1.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Ludan He</div>
+            <div class="card-content-text">
+              My name is He Ludan and I am majoring in Biology Education. I am lively and outgoing, helpful, and optimistic.
+              During my freshman year, I worked hard to study and ultimately achieved a good score of seventh in my major. I actively participated in club activities and developed my interests. Currently, I serve as the vice president of the Boxing Association. In my class, I also serve as a publicity committee member, working diligently and responsibly with a positive mindset. I was awarded the title of "Model Communist Youth League Cadre" at the college and school levels and became an active member of the Communist Party. And during the winter and summer vacations of my freshman year, I participated in multiple volunteer activities and also participated in social practice activities to enter the workplace, earning the title of "Excellent Practice Achievement".
+              In the first half of my sophomore year, I joined the Public Power Department of the Student Union and worked hard to complete various tasks. In addition, I actively participate in various competitions and serve as the leader. In my spare time, I enter the laboratory to follow my senior sister in experiments and improve my research abilities. Currently, I am the leader of the life science competition for the project of measuring arsenic in rice. I also participated in the career planning competition and served as the experimental group leader of the IGEM artificial seed project. Received third class scholarships and excellent students
+            </div>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+    
+        <div class="groupcontent">
+        <h1>Principal Investigator</h1>
+      </div>
+    
+        <div class="card-container ">
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/shengchun-li-p.jpg" class="" alt="" loading="lazy">
+                <p class="p-1">Shengchun Li</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/shengchun-li.jpg" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">Prof. Shengchun Li
+(Zhang's Lab for Plastid Genetic Engineering)</div>
+                    <div class="card-content-text">
+                    Hello there, iGEMers! Let me introduce myself with a dash of humor because science is serious business, but it doesn't mean <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> can't have a little fun along the way.
+My name is Li Shengchun, but feel free to call me Professor Leafy, given my love for all things green and chloroplasts. I'm a professor specializing in plastid (that's the fancy word for leaf-green stuff) gene engineering and how plants handle their internal stress—think of me as a plant bodyguard, helping them fend off those unwanted guests like insects and diseases.
+I've had the privilege of studying at some great places, including the Université Paris-Sud where I earned my PhD. Now, I teach and research at Hubei University, where I continue to unravel the secrets of plants.
+When I'm not in the lab playing matchmaker between genes and chloroplasts, I serve on various academic boards and am involved in community work with the Jiusan Society. And yes, I've got a few projects and papers under my belt, but let's not bore you with the details—<span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>'re all here for the science, the teamwork, and the journey, right?
+So, whether <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>'re working on <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> latest project or just hanging out, remember that the most important thing is to enjoy the process and learn from each other. After all, science is a marathon, not a sprint, and it's always more fun when you're running with friends!
+Let's make this iGEM experience one to remember. Cheers to making science exciting, one experiment at a time!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/sheng-yang.png" class="" alt="" loading="lazy">
+                <p class="p-1">Sheng Yang</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/sheng-yang.png" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">Senior Laboratory Technician: Sheng Yang
+(Zhang's Lab for Plastid Genetic Engineering)</div>
+                    <div class="card-content-text">
+                    Hi there, iGEM team members! It's a pleasure to introduce myself. You can call me Teacher Sunrise, because my name is Yang Sheng, and I like to think I bring a bit of brightness to the world of microbes and plants.
+
+I'm a Senior Researcher with a Ph.D. in Biochemistry and Molecular Biology from Hubei University, which I completed back in 2018. My main gig is exploring environmental microbiology and how these tiny critters affect plant health—think of me as a microbial matchmaker, trying to create a harmonious ecosystem where plants can thrive despite the challenges they face from pests and diseases.
+
+When I'm not busy investigating the fascinating world of microbes and their interactions with plants, I also delve into the realm of waste protein utilization. It's all about finding new ways to turn what might otherwise be considered waste into valuable resources.
+
+Now, while I spend a lot of time in the lab, I believe that the best science is done when <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>'re having fun and learning together. So, whether <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>'re brainstorming new ideas, troubleshooting experiments, or just sharing a cup of tea (because, as you might guess, I'm a big fan of tea), I'm here to support and inspire you.
+
+Let's make this iGEM project an adventure full of discovery and innovation. Together, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> can turn <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> research into something truly impactful and memorable!
+
+Feel free to reach out anytime; you can find me at sunrise1980@hubu.edu.cn.
+
+Cheers to making every day a sunny one in the lab!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/zhifan-yang-p.jpg" class="" alt="" loading="lazy">
+                <p class="p-1">Zhifan Yang</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/zhifan-yang2.jpg" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">Zhifan Yang</div>
+                    <div class="card-content-text">
+                    Hey there, iGEM team! Allow me to introduce myself—I’m Professor Yang Zhi Fan, but you can call me Captain Rice, since I spend most of my time defending <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> beloved grains against The brown planthopper (Nilaparvata lugens).
+
+I hold a Ph.D. from Wuhan University and have been a part of Hubei University ever since. Along the way, I’ve also spent some time as a visiting scholar at the University of Arizona, where I picked up a few tricks on how to communicate with those tiny pests in their own language (well, sort of).
+
+My research revolves around the molecular biology of the brown planthopper and the intricate relationship between rice and these pests. When I’m not battling bugs, I’m looking at ways to use RNA interference to make rice crops more resistant to these pests, turning the tables on them.
+
+Outside of academia, I serve as a council member of the Hubei Branch of the Chinese Genetics Society, which means I get to mingle with fellow scientists who share my passion for unraveling the mysteries of genetics.
+
+If you need to catch me, you can dial 027-88668073 or drop me an email at sailyangzhf(AT)hubu.edu.cn or sailyangzhf(AT)gmail.com. I promise not to let any brown planthoppers get through to your inbox!
+
+Together, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>’re going to make sure that rice stands tall against its enemies and that <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> research shines brightly. Let’s embark on this iGEM journey with enthusiasm and creativity, and remember, no pest shall pass!
+
+Looking forward to working with all of you and making some groundbreaking discoveries!
+
+I hold a Ph.D. from Wuhan University and have been a part of Hubei University ever since, climbing the academic ladder from teaching assistant to associate professor and now professor. Along the way, I’ve also spent some time as a visiting scholar at the University of Arizona, where I picked up a few tricks on how to communicate with those tiny pests in their own language.
+My research revolves around the molecular biology of the brown planthopper and the intricate relationship between rice and these pests. When I’m not battling bugs, I’m looking at ways to use RNA interference to make rice crops more resistant to these pests, turning the tables on them.
+
+Outside of academia, I serve as a council member of the Hubei Branch of the Chinese Genetics Society, which means I get to mingle with fellow scientists who share my passion for unraveling the mysteries of genetics.
+
+If you need to catch me, you can dial 027-88668073 or drop me an email at sailyangzhf@hubu.edu.cn or sailyangzhf@gmail.com. I promise not to let any brown planthoppers get through to your inbox!
+
+Together, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>’re going to make sure that rice stands tall against its enemies and that <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> research shines brightly. Let’s embark on this iGEM journey with enthusiasm and creativity, and remember, no pest shall pass!
+
+Looking forward to working with all of you and making some groundbreaking discoveries!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container ">
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/yumei-hu.jpg" class="" alt="" loading="lazy">
+                <p class="p-1">Yumei Hu</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/yumei-hu.jpg" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">Yumei Hu</div>
+                    <div class="card-content-text">
+Hey there, iGEM team! Let me introduce myself in a way that's as lively as the enzymes I study. My name is Hu Yu Mei, but you can call me Professor Enzyme, since I spend most of my time tinkering with enzymes and figuring out how to make them work better for us.
+
+I'm a Lecturer at Hubei University's School of Life Sciences, where I guide master's students and delve into the fascinating world of biocatalysis and enzyme engineering. Think of me as a mechanic for biological catalysts—my job is to tweak and tune these tiny workers so they can do their jobs more efficiently.
+
+My academic journey began at North University of China, where I studied Biotechnology. Then, I moved on to Tianjin University of Science & Technology for my Master's and Doctorate degrees, with a stint at the Institute of Industrial Biotechnology at the Chinese Academy of Sciences in Tianjin. This mix of academic and industrial experience has given me a unique perspective on how to apply scientific principles in practical settings.
+
+In my lab, <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>'re constantly exploring how to improve enzymes through molecular modifications and understanding the intricacies of their structures and catalytic mechanisms. If you're interested in how enzymes can be made to work harder or smarter, I'm your go-to person.
+
+When I'm not elbow-deep in research, I enjoy mentoring students and sharing my passion for science. Feel free to reach out if you have questions or just want to chat about anything related to biocatalysis or enzyme engineering. You can find me at huyumei@hubu.edu.cn.
+
+Let's make <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> iGEM project not only scientifically enriching but also a fun experience. After all, science is as much about discovery as it is about camaraderie and collaboration!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/haimou-zhang.jpg" class="" alt="" loading="lazy">
+                <p class="p-1">Haimou Zhang</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/haimou-zhang.jpg" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">Haimou Zhang</div>
+                    <div class="card-content-text">
+                    Hello there, iGEM team! My name is Professor Zhang Hai Mou, but you can call me Professor BioEdu, because I'm all about education in the life sciences and understanding the toxic effects on <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> environment. As the host of the "Hubei Master Teacher Studio," I take pride in fostering the next generation of scientists and educators.
+
+I've had the privilege of studying and working internationally, including earning my Ph.D. from the University of Ioannina in Greece and being a visiting scholar at Johns Hopkins University. Back home, I've dedicated my career to teaching and researching at Hubei University's School of Life Sciences, where I've led numerous educational reforms and projects aimed at enhancing the quality of biological science education.
+
+In addition to my academic roles, I serve on various committees and boards, such as the Ministry of Education's Teaching Guidance Committee for University Biology Courses, and I'm actively involved in local politics and social activities. So, if you ever need someone who can bridge the gap between science, education, and public service, I'm your go-to person.
+
+When I'm not busy with academic duties, you might find me brainstorming new teaching methods, mentoring students, or simply enjoying a cup of tea while contemplating the mysteries of life and toxins.
+
+If you want to chat about innovative teaching techniques, discuss the latest research findings, or just share a laugh, feel free to reach out. You can find me at haimou@hubu.edu.cn.
+
+Let's make this iGEM experience a journey filled with learning, laughter, and groundbreaking discoveries!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://static.igem.wiki/teams/5044/daesun-kim.jpg" class="" alt="" loading="lazy">
+                <p class="p-1">Daesun Kim</p>
+                <div class="card-content">
+                    <div class="card-content-img">
+                        <img src="https://static.igem.wiki/teams/5044/daesun-kim.jpg" loading="lazy" alt="HUBU-Hubei-China">
+                    </div>
+                    <div class="card-content-name">김대선 부교수
+Assoc. Prof. Daesun Kim
+(Zhang's Lab for Plastid Genetic Engineering)
+</div>
+                    <div class="card-content-text">
+                    Hello, iGEM team! I'm Associate Professor Daesun Kim, but you can call me Dr. Plant Doc. I specialize in plant pathology, which basically means I diagnose and treat plant ailments, just like a doctor for humans, except my patients are green and can't tell me where it hurts.
+
+I hail from South Korea, where I earned both my bachelor's degree and Ph.D. in Plant Pathology from Korea University. Since then, I've traveled quite a bit, working as a postdoc in prestigious institutions like the Sainsbury Laboratory in Norwich, UK, and Wuhan University in China, before settling down at Hubei University as a lecturer and now an associate professor.
+
+In my research, I dive deep into the world of stomatal immunity—those tiny pores on leaves that can either protect or betray <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> green friends. Think of me as a detective, uncovering the secrets of how plants fight off diseases and pests. It's a fascinating field, full of twists and turns, much like a good mystery novel!
+
+When I'm not in the lab, you can find me collaborating with colleagues, mentoring students, or simply enjoying a cup of tea. I believe that the best way to tackle complex problems is by working together and having a bit of fun along the way.
+
+Feel free to reach out if you want to chat about plant pathology, discuss your projects, or just say hello. My email is daesungkim@hubu.edu.cn. Looking forward to connecting with all of you and contributing to <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> exciting iGEM journey!
+
+Let's grow together, one experiment at a time!
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+  <div class="groupcontent">
+    <h1>HP Group Members</h1>
+  </div>
+ 
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team22.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Xingsha Wu</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team22.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Xingsha Wu</div>
+            <div class="card-content-text">
+                Xingsha Wu. I have a warm and outgoing personality, strong social skills, and currently serve as the chairman of the Volunteer Association of the Business School. I have organized many large-scale events, such as academic exchange activities and teaching support activities. I am good at completing related work in the human practice section. I have won many awards such as Internet plus National Silver Award, and I have rich experience in competition. I am willing to accept new challenges, passionate about problem-solving, and committed to constantly improving myself.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team12.png" class="" alt="" loading="lazy">
+        <p class="p-1">Cankai Yu</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team12.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Cankai Yu</div>
+            <div class="card-content-text">
+              My name is Cankai Yu, from the beautiful hometown of osmanthus - Xianning. I am currently studying Biological Science (Teacher Education) at Hubei University, with the goal of becoming a proud teacher for the people. My personality is lively, outgoing, optimistic, and has a wide range of hobbies. I am good at making friends, exercising, and learning new knowledge. During my two years of college, I have acquired a wealth of skills and knowledge, and accumulated a series of practical experience. A chance experience allowed me to learn about iGEM, an open, inclusive, and unprecedentedly large international event. Feeling deeply lacking in innovation ability, I have resolutely decided to invest in it and now join the HUBU China team at Hubei University to be responsible for HP related work, dedicated to carrying out synthetic biology education related content.
+            </div>
+        </div>
+    </div> 
+</div>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="https://static.igem.wiki/teams/5044/team21.png" class="" alt="" loading="lazy">
+            <p class="p-1">Xianyi Ke</p>
+            <div class="card-content">
+                <div class="card-content-img">
+                    <img src="https://static.igem.wiki/teams/5044/team21.png" loading="lazy" alt="HUBU-Hubei-China">
+                </div>
+                <div class="card-content-name">Xianyi Ke</div>
+                <div class="card-content-text">
+                    Hello, everyone. I am a student majoring in bioinformation from Hubei University. I pay attention to all aspects of development. It is a great honour to be in this active team and I hope my enthusiasm can contribute to iGEM.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://static.igem.wiki/teams/5044/team18.png" class="" alt="" loading="lazy">
+            <p class="p-1">Zining Huang</p>
+            <div class="card-content">
+                <div class="card-content-img">
+                    <img src="https://static.igem.wiki/teams/5044/team18.png" loading="lazy" alt="HUBU-Hubei-China">
+                </div>
+                <div class="card-content-name">Zining Huang</div>
+                <div class="card-content-text">
+                    Hello everyone, I am Zining Huang, this is my second time to participate in iGEM as a small member of hp. Compared with the first time, I have more experience and more expectations. I really hope to grow together with you in this iGEM trip!
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://static.igem.wiki/teams/5044/team7.png" class="" alt="" loading="lazy">
+            <p class="p-1">Jiawen Shi</p>
+            <div class="card-content">
+                <div class="card-content-img">
+                    <img src="https://static.igem.wiki/teams/5044/team7.png" loading="lazy" alt="HUBU-Hubei-China">
+                </div>
+                <div class="card-content-name">Jiawen Shi</div>
+                <div class="card-content-text">
+                  Hello, everyone. My name is Jiawen Shi. I am a student of Bioscience class 2023 in Hubei University. I like reading, writing and paper-cutting on weekdays，and also like playing games. I am very interested in biology, I am honored to participate in this competition, welcome to communicate with me!
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team6.png" class="" alt="" loading="lazy">
+        <p class="p-1">Xinyi Li</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team6.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Xinyi Li</div>
+            <div class="card-content-text">
+              Hello, everyone! Now I'd like to introduce myself to you.Firstly, I'm an active and cheerful university student. All kinds of activities are appealing to me, such as cycling, singing, and playing video games on both virtual and computer platforms. Additionally, cosplay is one of my hobbies. Secondly, I am filled with moral qualities like kindness and responsibility. Finally, I have participated in numerous competitions.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team11.png" class="" alt="" loading="lazy">
+        <p class="p-1">Maosen Bai</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team11.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Maosen Bai</div>
+            <div class="card-content-text">
+              I am Maosen Bai from Class 2306 in the Department of Biology. I am currently serving as the class monitor of Class 2306 and the deputy secretary of the Youth League Committee of the College of General Education. 
+              I am very interested in biology and have won the second prize in the national division of the 2022 National High School Biology League; Third prize in the National English Composition Competition for Middle School Students.
+             My hobbies are piano, painting, photography, and traveling. Hope <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> work together to create brilliance!
+            </div>
+        </div>
+    </div>
+    <div class="card">
+          <img src="https://static.igem.wiki/teams/5044/team3.png" class="" alt="" loading="lazy">
+          <p class="p-1">Yuhuan Chun</p>
+          <div class="card-content">
+              <div class="card-content-img">
+                  <img src="https://static.igem.wiki/teams/5044/team3.png" loading="lazy" alt="HUBU-Hubei-China">
+              </div>
+              <div class="card-content-name">Yuhuan Chun</div>
+              <div class="card-content-text">
+                Hello everyone, my name is Yuhuan Chun and I come from the School of Life Sciences, Hubei University. I am a member of the igem team and participate in all aspects of the team's work. I love biology, and I think it is very interesting and can help many people. I am very grateful for the opportunity to participate in the igem competition. In daily life, I like to read books and often go to the library to study. I also enjoy sports and often play basketball and badminton. I also hope to use my knowledge to help more people in the future. I am very grateful for the platform igem, which has allowed me to learn a lot of knowledge. I will continue to work hard.
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="groupcontent">
+    <h1>Art Group Members</h1>
+  </div>
+
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team9.png" class="" alt="" loading="lazy">
+        <p class="p-1">Yanxi Zhou</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team9.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Yanxi Zhou</div>
+            <div class="card-content-text">
+              Hello, my name is Yanxi Zhou, a student majoring in biological science at Hubei University. I love having connection with nature and painting. I'm honored to participate in iGEM. I look forward to cooperating and learning with you, hoping to contribute a little bit to sustainable development!
+            </div>
+        </div>
+    </div>  
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team24-1.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Yina Li</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team24-2.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Yina Li</div>
+            <div class="card-content-text">
+                Greeting～,I'm Lorina. From the Art School of Hubei University. Born in Changsha, Hunan, three mountains and four rivers, love is Xiaoxiang, my character grew out of this land, I am lively and cheerful, can positively face life. Usual hobbies are very broad, cooking, flying kites, singing and playing piano, boating and archery. I am very happy to join this team. I hope you will not be afraid of me, and <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> can make progress together and shine together in the IGEM team.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team20.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Siyu Zhou</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team20.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Siyu Zhou</div>
+            <div class="card-content-text">
+                Hello everyone,My name is Siyu Zhou, and I am a passionate and dedicated art student currently pursuing my studies in the Department of Fine Arts, majoring in Oil Painting at Hubei University. It is with immense joy and excitement that I embark on this journey of exploring the vast expanse of color, texture, and emotion that oil painting embodies.
+At Hubei University, I am surrounded by a vibrant community of like-minded individuals who share a common passion for art. The rigorous curriculum and hands-on learning experiences have equipped me with a solid foundation in the techniques and theories of oil painting. I have honed my skills under the guidance of esteemed professors, engaging in projects that challenge me both technically and creatively.
+I am excited about the future and the opportunities that lie ahead in the field of art. I am committed to continuously growing as an artist, pushing the boundaries of my creativity, and sharing my vision with the world. Thank you for taking the time to learn more about me, and I look forward to the possibility of collaborating and sharing my art with you.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+          <img src="https://static.igem.wiki/teams/5044/team8.png" class="" alt="" loading="lazy">
+          <p class="p-1">Yuhan Wang</p>
+          <div class="card-content">
+              <div class="card-content-img">
+                  <img src="https://static.igem.wiki/teams/5044/team8.png" loading="lazy" alt="HUBU-Hubei-China">
+              </div>
+              <div class="card-content-name">Yuhan Wang</div>
+              <div class="card-content-text">
+                I am Yuhan Wang from Hubei University, majoring in biology, a member of the wet team, in my free time, I like to listen to songs and watch movies, and I look forward to achieving common goals together in the future.
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="groupcontent">
+    <h1>Model Group Members</h1>
+  </div>
+
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team17.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Xiang Li</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team17.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Xiang Li</div>
+            <div class="card-content-text">
+              Xiang Li, Manchester Metropolitan Joint Institute in Hubei University. I like mathematical modeling, and I am currently in charge of the modeling part of the team, and I am willing to study abroad in the future, and I love to play Genshin Impact, and I hope to make progress together with everyone.
+            </div>
+        </div>
+    </div>  
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team5.png" class="" alt="" loading="lazy">
+        <p class="p-1">Zihao Wan</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team5.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Zihao Wan</div>
+            <div class="card-content-text">
+              Hello everyone, my name is Zihao Wan, and I come from the School of Life Sciences at Hubei University in China. I am honored to participate in this iGEM competition and learn and progress together with students from various other disciplines. In my spare time, I enjoy listening to music, reading books, and engaging in sports. I hope to contribute my knowledge and abilities to help <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> team achieve great results, and I also hope that <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> achievements can assist even more people.
+            </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team13.png" class="" alt="" loading="lazy">
+        <p class="p-1">Binyu Guo</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team13.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Binyu Guo</div>
+            <div class="card-content-text">
+                Hi everyone,my name is Binyu Guo,a sophomore majoring in biotechnology.Not only do I carefully finish the work distributed to me, but I'm also able to cooperate with <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> team.In my daily life,I usually like listening to music and reading mystery novels.I hope to improve my ability and demonstrate my value through the competition, and I also hope to achieve good results with you in this year's iGEM competition.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team26.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Yuxin Liu</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team26.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Yuxin Liu</div>
+            <div class="card-content-text">
+                Hi！ I am Yuxin Liu, hailing from the picturesque land of Hebei, the ancient state of Yan Zhao. This place of grandeur and beauty has nurtured my warmth and resilience. Currently, I am deeply engaged in the field of bioinformatics, a domain brimming with challenges and opportunities, and as a student, I relish every moment of exploring the mysteries of life.
+
+                I possess a lively and cheerful personality, always facing life's challenges with a positive and optimistic attitude. I firmly believe that every attempt is an opportunity for growth.
+                
+                This year, I am fortunate to participate in the iGEM competition for the first time. It is a gathering of talented young minds from around the globe, and I am filled with anticipation. I am eager to join hands with teammates from all over the world to explore together, to make progress together, and to leave <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> mark in the field of biotechnology.
+                
+                I look forward to this journey where <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> can inspire each other, support each other, meet every challenge together, and enjoy the joy of every success. Let's grow together and create <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> own wonderful stories!
+            </div>
+        </div>
+    </div>  
+    <div class="card">
+          <img src="https://static.igem.wiki/teams/5044/team10.png" class="" alt="" loading="lazy">
+          <p class="p-1">Yingshui Xie</p>
+          <div class="card-content">
+              <div class="card-content-img">
+                  <img src="https://static.igem.wiki/teams/5044/team10.png" loading="lazy" alt="HUBU-Hubei-China">
+              </div>
+              <div class="card-content-name">Yingshui Xie</div>
+              <div class="card-content-text">
+                Hello everyone, I am Yingshui Xie from the 2022 Biological Science major at Hubei University.
+                Biology allows us to appreciate the mysteries of life and love every life on Earth even more. I am honored to join iGEM and learn with everyone. I hope to achieve excellent results through everyone's joint efforts.
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="groupcontent">
+    <h1>Experiment Group Members</h1>
+  </div>
+
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team19.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Ken Chen</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team19.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Ken Chen</div>
+            <div class="card-content-text">
+                I’m Ken Chen from Hubei University,majoring in biological science.I’m one of wet team.I like synthetic biology every much.I want to take the opportunity of IGEM to learn more about synthetic biology.As a saying goes:“efforts will bear fruit.”I convince that <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> will make great achievements in future.In the end,I hope that <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> team would get a good score in IGEM!
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team4.png" class="" alt="" loading="lazy">
+        <p class="p-1">Jialin Jiang</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team4.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Jialin Jiang</div>
+            <div class="card-content-text">
+              My name is Jialin Jiang, a student majoring in biology teacher at Hubei University and one of the participants of igem experimental Group. I have this lively and cheerful personality and love life attitude. In addition, I love experiment and painting,and I enjoy being focused in them.I have the attitude of striving for excellence and the principle of rigorous and serious scientific experiments.I love biological experiments and I am willing to work hard for them.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team1.png" class="" alt="" loading="lazy">
+        <p class="p-1">Wantin Yang</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team1.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Wantin Yang</div>
+            <div class="card-content-text">
+                Hello everyone, my name is Wanting Yang and I come from the Department of Biological Science Education. I am a member of the iGEM branch's experimental group and also help create PPTs for daily reports. I also operate the team's Instagram account. I have an optimistic and outgoing personality, a wide range of hobbies, good grades, and good learning abilities. In my freshman year, I ranked first in my major, and I love experiments. I am eager to turn theoretical basis into facts. Willing to utilize professional knowledge and use the power of education to promote projects better in future work!
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <div class="groupcontent">
+    <h1>Wiki Group Members</h1>
+  </div>
+
+  <div class="card-container ">
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team23.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Yang Sun</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team23.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Yang Sun</div>
+            <div class="card-content-text">
+                I'm a passionate university student with a deep interest in technology and software development. As a full-stack developer, I have experience working with Vue, React, and Go, which I use to build dynamic and efficient web applications. As an active member of my team's wiki creation group, I contribute to documentation and knowledge sharing. I love exploring new technologies and finding innovative solutions to challenges 
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team25.jpg" class="" alt="" loading="lazy">
+        <p class="p-1">Yuxin Xiao</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team25.jpg" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Yuxin Xiao</div>
+            <div class="card-content-text">
+                My name is Xiao Yuxin, and I am a dedicated researcher in the field of Plant Microbes and RNAi for Pest Control. I am enthusiastic, diligent, and committed to advancing sustainable agricultural practices. During my academic journey, I have consistently achieved high standards, earning recognition for my work and contributions.
+                Academic Excellence and Leadership:
+                Throughout my studies, I have maintained a strong academic record, achieving top scores in my major. My dedication to learning and research has been acknowledged through various awards and recognitions.
+                I actively participate in academic clubs and organizations, where I have developed a keen interest in biotechnology and its applications in agriculture.
+                Research and Collaboration:
+                I have engaged in extensive background research on using RNA interference (RNAi) as a biological control method for agricultural pests. This involved reading numerous scientific articles and conducting market studies to understand current pesticide usage and the potential impact of RNAi-based solutions.
+                I have had the privilege of collaborating with Professor Ralph Bock, a renowned scientist from the German Academy of Sciences, which has greatly enriched my understanding of cutting-edge techniques in the field.
+                I regularly attend and present at national and international conferences, sharing <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> findings and engaging with other researchers to foster collaboration and innovation.
+                Project Administration and Teamwork:
+                In my role, I ensure that all team members are well-informed about experimental protocols and safety guidelines. I provide hands-on training and support, making sure that everyone is comfortable with the equipment and procedures.
+                I maintain detailed laboratory notebooks, documenting every step of <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span> experiments, results, and observations. These records are shared with the team to ensure transparency and facilitate further analysis.
+                Public Engagement and Writing:
+                I contribute to writing project reports, maintaining the laboratory notebook, and creating content for <span style="color: rgb(19, 82, 0); font-size: 16px;"><strong>PLASTID </strong></span><span style="color: rgb(19, 82, 0); font-size: 16px;"> </span><span style="color: rgb(255, 255, 255); background-color: rgb(207, 19, 34); font-size: 16px;">PESTI</span><span style="color: rgb(255, 255, 255); background-color: rgb(212, 56, 13); font-size: 16px;">CIDES</span><span style="color: rgb(44, 44, 54); font-size: 16px;"><em>™</em></span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="card">
+        <img src="https://static.igem.wiki/teams/5044/team16.png" class="" alt="" loading="lazy">
+        <p class="p-1">Baichuan Jiang</p>
+        <div class="card-content">
+            <div class="card-content-img">
+                <img src="https://static.igem.wiki/teams/5044/team16.png" loading="lazy" alt="HUBU-Hubei-China">
+            </div>
+            <div class="card-content-name">Baichuan Jiang</div>
+            <div class="card-content-text">
+              I am Baichaun Jiang from Hubei University.I am in charge of the production of wikis, currently studying software engineering at Manchester Metropolitan Joint Institute, I am very interested in front-end development and artificial intelligence, I joined this competition because of my love for biology, I am very happy to be able to learn and progress with you, and take this opportunity to improve my ability.
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+    <div class="card-container ">
+        <div class="card">
+            <img src="https://static.igem.wiki/teams/5044/logo.png" class="" alt="" loading="lazy">
+            <p class="p-1">members</p>
+            <div class="card-content">
+                <div class="card-content-img">
+                    <img src="https://static.igem.wiki/teams/5044/logo.png" loading="lazy" alt="HUBU-Hubei-China">
+                </div>
+                <div class="card-content-name">members</div>
+                <div class="card-content-text">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
+
+

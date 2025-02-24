@@ -1,0 +1,27 @@
+#entry-wrapper {
+    position: relative;
+    min-width: 300px;
+    max-width: 300px;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: 2rem;
+}
+
+#entry .item {
+    border: 1px solid #666666;
+    margin-top: -1px;
+}
+
+#entry .item .title {
+    font-weight: bold;
+    font-size: 16px;
+    background: #d3d3a4;
+    text-align: center;
+    padding: 4px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #666666;
+}
+
+#entry .item .content {
+    padding: 0 8px;
+}
