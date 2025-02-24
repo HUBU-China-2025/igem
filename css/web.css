@@ -125,7 +125,7 @@
 /* The background of the whole page */
 .backbox{
 /* body{ */
-  background-image: url("https://gitee.com/hubu-china/pictures/blob/master/picture/0.jpg");
+  background-image: url("../picture/0.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
