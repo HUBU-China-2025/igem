@@ -41,9 +41,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'public'
+          path: 'public'  # 需要确保 'public' 目录中的文件可以访问 home 页面
 
       # 7️⃣ 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # 修改源目录为 docs
+          branch: main
+          folder: docs/pages  # 设置 GitHub Pages 部署源为 docs/pages 文件夹
